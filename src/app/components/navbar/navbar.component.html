@@ -9,6 +9,7 @@
     >
       <a
         class="text-2xl font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
+        routerLink="/"
         >Edu-Free</a
       ><button
         class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
@@ -47,48 +48,29 @@
             ><i
               class="lg:text-gray-300 text-gray-500 far fa-file-alt text-lg leading-lg mr-2"
             ></i>
-            Schedules</a
+            About</a
           >
         </li>
       </ul>
       <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
         <li class="flex items-center">
-          <a
-            class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-            href="#pablo"
-            ><i
-              class="lg:text-gray-300 text-gray-500 fab fa-facebook text-lg leading-lg "
-            ></i
-            ><span class="lg:hidden inline-block ml-2">Share</span></a
+          <button
+            class="bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3"
+            type="button"
+            style="transition: all 0.15s ease 0s;"
+            routerLink="/login-page" routerLinkActive="text-black-400" [routerLinkActiveOptions]="{exact:true}"
           >
-        </li>
-        <li class="flex items-center">
-          <a
-            class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-            href="#pablo"
-            ><i
-              class="lg:text-gray-300 text-gray-500 fab fa-twitter text-lg leading-lg "
-            ></i
-            ><span class="lg:hidden inline-block ml-2">Tweet</span></a
-          >
-        </li>
-        <li class="flex items-center">
-          <a
-            class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-            href="#pablo"
-            ><i
-              class="lg:text-gray-300 text-gray-500 fab fa-github text-lg leading-lg "
-            ></i
-            ><span class="lg:hidden inline-block ml-2">Star</span></a
-          >
+            <i class="fas fa-arrow-alt-circle-down"></i> Log In
+          </button>
         </li>
         <li class="flex items-center">
           <button
             class="bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3"
             type="button"
             style="transition: all 0.15s ease 0s;"
+            routerLink="/register" routerLinkActive="text-black-400" [routerLinkActiveOptions]="{exact:true}"
           >
-            <i class="fas fa-arrow-alt-circle-down"></i> Download
+            <i class="fas fa-arrow-alt-circle-down"></i> Sign Up
           </button>
         </li>
       </ul>
