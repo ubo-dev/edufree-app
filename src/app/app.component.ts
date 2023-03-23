@@ -9,5 +9,5 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'edufree-app';
-  // cart curt = new curt();
+  // cart curt = new curt();  // This is a class
 }
