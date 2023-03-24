@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class RegisterComponent {
 
+  isTeacher: boolean = false;
+
+  toggle() {
+    this.isTeacher = !this.isTeacher;
+  }
 }
