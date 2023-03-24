@@ -1,5 +1,5 @@
 <!-- component -->
-
+<app-alert *ngIf="showAlert" [color]="alertColor" class="mt-4"> {{ alertMsg }}</app-alert>
 
 <div class="bg-white dark:bg-gray-900">
   <div class="flex justify-center h-screen">
@@ -68,7 +68,6 @@
           </p>
         </div>
 
-        <app-alert *ngIf="showAlert" [color]="alertColor" class="mt-4"> {{ alertMsg }}</app-alert>
 
         <div class="mt-8">
           <form #loginForm="ngForm" (ngSubmit)="login()">

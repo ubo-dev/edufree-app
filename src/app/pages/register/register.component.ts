@@ -17,13 +17,15 @@ export class RegisterComponent {
 
 
   }
-  isTeacher: boolean = false;
+  isTeacher: boolean = true;
 
   toggle() {
-    console.log("this.isTeacher: ", this.isTeacher);
     this.isTeacher = !this.isTeacher;
+    console.log("this.isTeacher: ", this.isTeacher);
   }
   inSubmission = false;
+
+  public formControl: FormControl | undefined;
 
   name= new FormControl('',[
     Validators.required,
@@ -51,14 +53,19 @@ export class RegisterComponent {
     Validators.minLength(13),
     Validators.maxLength(13)
   ])
+
+  isInstructor = new FormControl('',[
+    Validators.required
+  ])
+
   registerForm=new FormGroup({
     name:this.name,
     lastName:this.name,
     email:this.email,
     password:this.password,
     confirm_password:this.confirm_password,
-    phoneNumber:this.phoneNumber
-    
+    phoneNumber:this.phoneNumber,
+    //isInstructor:this.isTeacher
   })
 
   showAlert = false;

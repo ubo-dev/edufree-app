@@ -1,33 +1,54 @@
 <!-- component -->
 <app-alert *ngIf="showAlert" [color]="alertColor">
-  {{alertMsg}}
+  {{ alertMsg }}
 </app-alert>
 <section class="bg-white dark:bg-gray-900">
   <div class="flex justify-center min-h-screen">
-    <div class="hidden bg-cover lg:block lg:w-2/5" style="
+    <div
+      class="hidden bg-cover lg:block lg:w-2/5"
+      style="
         background-image: url('https://images.unsplash.com/photo-1588702547919-26089e690ecc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
-      ">
+      "
+    >
       <div>
-        <a routerLink="/"
-          class="relative inline-flex items-center justify-center ml-5  px-6 py-3 mt-5 mr-4 mb-96 overflow-hidden font-medium text-white transition duration-300 ease-out border-2 border-gray-900 rounded-full shadow-md group">
+        <a
+          routerLink="/"
+          class="relative inline-flex items-center justify-center ml-5 px-6 py-3 mt-5 mr-4 mb-96 overflow-hidden font-medium text-white transition duration-300 ease-out border-2 border-gray-900 rounded-full shadow-md group"
+        >
           <span
-            class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-gray-900 group-hover:translate-x-0 ease">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            class="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-gray-900 group-hover:translate-x-0 ease"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              ></path>
             </svg>
           </span>
           <span
-            class="absolute flex items-center justify-center w-full h-full text-gray-900 transition-all duration-300 transform group-hover:translate-x-full ease">Back
-            to Home</span>
+            class="absolute flex items-center justify-center w-full h-full text-gray-900 transition-all duration-300 transform group-hover:translate-x-full ease"
+            >Back to Home</span
+          >
           <span class="relative invisible">Button Text</span>
         </a>
       </div>
     </div>
 
-    <div class="flex items-center w-full max-w-3xl p-8 mx-auto lg:px-12 lg:w-3/5">
+    <div
+      class="flex items-center w-full max-w-3xl p-8 mx-auto lg:px-12 lg:w-3/5"
+    >
       <div class="w-full">
-        <h1 class="text-2xl font-semibold tracking-wider text-gray-800 capitalize dark:text-white">
+        <h1
+          class="text-2xl font-semibold tracking-wider text-gray-800 capitalize dark:text-white"
+        >
           Get your free account now.
         </h1>
 
@@ -43,26 +64,57 @@
 
           <div class="mt-3 md:flex md:items-center md:-mx-2">
             <button
+              [disabled]="!isTeacher"
               class="flex justify-center w-full px-6 py-3 border border-blue-500 rounded-md md:w-auto md:mx-2 focus:outline-none"
               (click)="toggle()"
-              [ngClass]="{'bg-blue-500': !isTeacher, 'bg-white-500': isTeacher, 'text-white-500': !isTeacher, 'text-blue-500': isTeacher}">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              [ngClass]="{
+                'bg-blue-500': !isTeacher,
+                'bg-white-500': isTeacher,
+                'text-white-500': !isTeacher,
+                'text-blue-500': isTeacher
+              }"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
               </svg>
 
               <span class="mx-2"> Student </span>
             </button>
 
             <button
+              [disabled]="isTeacher"
               class="flex justify-center w-full px-6 py-3 mt-4 text-blue-500 border border-blue-500 rounded-md md:mt-0 md:w-auto md:mx-2 dark:border-blue-400 dark:text-blue-400 focus:outline-none"
               (click)="toggle()"
-              [ngClass]="{'bg-blue-500': isTeacher, 'bg-white-500': isTeacher, 'text-blue-500': !isTeacher}">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              [ngClass]="{
+                'bg-blue-500': isTeacher,
+                'bg-white-500': isTeacher,
+                'text-blue-500': !isTeacher
+              }"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                />
               </svg>
 
               <span class="mx-2"> Instructor </span>
@@ -70,58 +122,87 @@
           </div>
         </div>
 
-
-        <form [formGroup]="registerForm" (ngSubmit)="register()" class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2">
+        <form
+          [formGroup]="registerForm"
+          (ngSubmit)="register()"
+          class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2"
+        >
           <div>
-            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">First Name</label>
-            <app-input  [control]="name" placeholder="Enter Name"></app-input>
-
+            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+              >First Name</label
+            >
+            <app-input [control]="name" placeholder="Enter Name"></app-input>
           </div>
 
           <div>
-            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Last name</label>
-            <app-input [control]="lastName" placeholder="Enter Last Name"></app-input>
-
-          </div>
-
-          <div>
-            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Phone number</label>
-            <app-input [control]="phoneNumber" 
-            format="(000)000-0000" 
-            placeholder="Enter Phone Number"
+            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+              >Last name</label
+            >
+            <app-input
+              [control]="lastName"
+              placeholder="Enter Last Name"
             ></app-input>
           </div>
 
           <div>
-            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Email address</label>
-            <app-input [control]="email" type="email"
-            placeholder="Enter Email"></app-input>   
+            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+              >Phone number</label
+            >
+            <app-input
+              [control]="phoneNumber"
+              format="(000)000-0000"
+              placeholder="Enter Phone Number"
+            ></app-input>
           </div>
 
           <div>
-            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Password</label>
-            <app-input [control]="password" type="password">
+            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+              >Email address</label
+            >
+            <app-input
+              [control]="email"
+              type="email"
+              placeholder="Enter Email"
+            ></app-input>
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+              >Password</label
+            >
+            <app-input [control]="password" type="password" placeholder="Enter Password">
               placeholder="Enter Password"
-             </app-input> </div>
-
-          <div>
-            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Confirm password</label>
-            <app-input [control]="confirm_password" type="password">
-              placeholder="Confirm Password"
-            </app-input>  
+            </app-input>
           </div>
 
-          <button  [disabled]="registerForm.invalid" type="submit"
+          <div>
+            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+              >Confirm password</label
+            >
+            <app-input [control]="confirm_password" type="password" placeholder="Confirm Password">
+              placeholder="Confirm Password"
+            </app-input>
+          </div>
+
+          <button
+            [disabled]="registerForm.invalid"
+            type="submit"
             class="flex items-center justify-between w-full px-6 py-3 text-sm tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
-        
-          [disabled]="registerForm.invalid || inSubmission">
+            [disabled]="registerForm.invalid || inSubmission"
+          >
             <span>Sign Up </span>
 
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 rtl:-scale-x-100" viewBox="0 0 20 20"
-              fill="currentColor">
-              <path fill-rule="evenodd"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 rtl:-scale-x-100"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                clip-rule="evenodd" />
+                clip-rule="evenodd"
+              />
             </svg>
           </button>
         </form>
