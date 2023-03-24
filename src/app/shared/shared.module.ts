@@ -8,13 +8,15 @@ import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 
 @NgModule({
   declarations: [
+    
     InputComponent,
-    AlertComponent
+    AlertComponent,
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    NgxMaskDirective
+    NgxMaskDirective,
+    
   ],
   exports: [
     InputComponent,

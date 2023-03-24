@@ -37,8 +37,8 @@ export class AuthService {
 
     await this.usersCollection.doc(userCred.user.uid).set({
       name: userData.name,
+      lastName: userData.lastName,
       email: userData.email,
-      age: userData.age,
       phoneNumber: userData.phoneNumber,
     });
 

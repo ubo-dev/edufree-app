@@ -13,8 +13,9 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment.development';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { SharedModule } from "./shared/shared.module";
+import { RegisterValidatorsComponent } from './validators/register-validators/register-validators.component';
 
 @NgModule({
     declarations: [
@@ -25,7 +26,8 @@ import { SharedModule } from "./shared/shared.module";
         RegisterComponent,
         StatusComponent,
         LoginTeacherComponent,
-        LoginStudentComponent
+        LoginStudentComponent,
+        RegisterValidatorsComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -35,6 +37,7 @@ import { SharedModule } from "./shared/shared.module";
         AngularFireModule.initializeApp(environment.firebaseConfig),
         AngularFireAuthModule,
         AngularFirestoreModule,
+        ReactiveFormsModule,
         FormsModule,
         SharedModule
     ]
