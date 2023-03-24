@@ -62,6 +62,7 @@
           <div class="mt-3 md:flex md:items-center md:-mx-2">
             <button
               class="flex justify-center w-full px-6 py-3 text-white bg-blue-500 rounded-md md:w-auto md:mx-2 focus:outline-none"
+              (click)="toggle()"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +79,7 @@
                 />
               </svg>
 
-              <span class="mx-2"> client </span>
+              <span class="mx-2"> Student </span>
             </button>
 
             <button
@@ -99,7 +100,7 @@
                 />
               </svg>
 
-              <span class="mx-2"> worker </span>
+              <span class="mx-2"> Instructor </span>
             </button>
           </div>
         </div>
