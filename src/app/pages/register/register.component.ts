@@ -10,6 +10,7 @@ export class RegisterComponent {
   isTeacher: boolean = false;
 
   toggle() {
+    console.log("this.isTeacher: ", this.isTeacher);
     this.isTeacher = !this.isTeacher;
   }
 }
