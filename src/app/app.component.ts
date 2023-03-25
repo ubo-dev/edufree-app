@@ -14,7 +14,7 @@ export class AppComponent {
   constructor(private router: Router) {}
   
   showNavbar(): boolean {
-    const hideNavbar = this.router.url === '/login-teacher' || this.router.url === '/login-student' 
+    const hideNavbar = this.router.url === '/login-teacher' || this.router.url === '/login-student' || this.router.url === '/instructor-page/edit'
     || this.router.url === '/status' || this.router.url === '/register';
     return !hideNavbar;
   }

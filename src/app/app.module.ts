@@ -16,8 +16,9 @@ import { environment } from 'src/environments/environment.development';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { SharedModule } from "./shared/shared.module";
 import { RegisterValidatorsComponent } from './validators/register-validators/register-validators.component';
-import { InstructorsPageComponent } from './pages/instructors-page/instructors-page.component';
+import { InstructorPageComponent } from './pages/instructor-page/instructor-page.component';
 import { SearchComponent } from './pages/search/search.component';
+import { InstructorProfileComponent } from './pages/instructor-profile/instructor-profile.component';
 
 @NgModule({
     declarations: [
@@ -30,8 +31,9 @@ import { SearchComponent } from './pages/search/search.component';
         LoginTeacherComponent,
         LoginStudentComponent,
         RegisterValidatorsComponent,
-        InstructorsPageComponent,
-        SearchComponent
+        InstructorPageComponent,
+        SearchComponent,
+        InstructorProfileComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
