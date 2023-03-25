@@ -6,6 +6,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { StatusComponent } from './pages/status/status.component';
 import { LoginTeacherComponent } from './pages/login/login-teacher/login-teacher.component';
 import { LoginStudentComponent } from './pages/login/login-student/login-student.component';
+import { SearchComponent } from './pages/search/search.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full"},
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: "register", component: RegisterComponent }, 
   { path: "status", component: StatusComponent },
   { path: "instructors-page", component: InstructorsPageComponent},
+  { path: "student-page", component: SearchComponent},
   { path: "**", redirectTo: "home" }
   
 ];
