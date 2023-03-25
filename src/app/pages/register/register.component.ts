@@ -81,6 +81,10 @@ export class RegisterComponent {
     this.alertMsg = 'Your account has been created successfully!';
     this.alertColor = 'green';
     await sleep(3000);
-    this.router.navigate(['/instructors-page']);
+    if(this.isTeacher){
+      this.router.navigate(['/instructors-page']);
+    }else {
+      this.router.navigate(['/student-page']);
+    }
   }
 }
