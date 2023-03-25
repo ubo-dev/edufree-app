@@ -40,6 +40,7 @@ export class AuthService {
       lastName: userData.lastName,
       email: userData.email,
       phoneNumber: userData.phoneNumber,
+      isInstructor: userData.isInstructor
     });
 
     await userCred.user.updateProfile({

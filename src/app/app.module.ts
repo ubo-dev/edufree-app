@@ -16,6 +16,7 @@ import { environment } from 'src/environments/environment.development';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { SharedModule } from "./shared/shared.module";
 import { RegisterValidatorsComponent } from './validators/register-validators/register-validators.component';
+import { InstructorsPageComponent } from './pages/instructors-page/instructors-page.component';
 
 @NgModule({
     declarations: [
@@ -27,7 +28,8 @@ import { RegisterValidatorsComponent } from './validators/register-validators/re
         StatusComponent,
         LoginTeacherComponent,
         LoginStudentComponent,
-        RegisterValidatorsComponent
+        RegisterValidatorsComponent,
+        InstructorsPageComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
