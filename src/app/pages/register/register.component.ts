@@ -20,6 +20,7 @@ export class RegisterComponent {
     private router: Router
   ) {}
   isTeacher: boolean = true;
+
   
 
   toggle() {

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,12 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'edufree-app';
-  // cart curt = new curt();  // This is a class
+
+  constructor(private router: Router) {}
+  
+  showNavbar(): boolean {
+    const hideNavbar = this.router.url === '/login-teacher' || this.router.url === '/login-student' 
+    || this.router.url === '/status' || this.router.url === '/register';
+    return !hideNavbar;
+  }
 }
