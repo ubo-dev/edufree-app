@@ -1,3 +1,4 @@
+import { InstructorsPageComponent } from './pages/instructors-page/instructors-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: "login-student", component: LoginStudentComponent },
   { path: "register", component: RegisterComponent }, 
   { path: "status", component: StatusComponent },
+  { path: "instructors-page", component: InstructorsPageComponent},
   { path: "**", redirectTo: "home" }
   
 ];
