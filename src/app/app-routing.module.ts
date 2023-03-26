@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: "status", component: StatusComponent },
   { path: "instructor-page", component: InstructorPageComponent},
   { path: "instructor-page/edit", component: InstructorProfileComponent},
-  { path: "student-page", component: SearchComponent},
+  { path: "search", component: SearchComponent},
   { path: "**", redirectTo: "home" }
   
 ];

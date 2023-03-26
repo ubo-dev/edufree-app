@@ -19,6 +19,7 @@ import { RegisterValidatorsComponent } from './validators/register-validators/re
 import { InstructorPageComponent } from './pages/instructor-page/instructor-page.component';
 import { SearchComponent } from './pages/search/search.component';
 import { InstructorProfileComponent } from './pages/instructor-profile/instructor-profile.component';
+import { StudentPageComponent } from './pages/student-page/student-page.component';
 
 @NgModule({
     declarations: [
@@ -33,7 +34,8 @@ import { InstructorProfileComponent } from './pages/instructor-profile/instructo
         RegisterValidatorsComponent,
         InstructorPageComponent,
         SearchComponent,
-        InstructorProfileComponent
+        InstructorProfileComponent,
+        StudentPageComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
