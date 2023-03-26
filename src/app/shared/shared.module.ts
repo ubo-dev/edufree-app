@@ -8,7 +8,6 @@ import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 
 @NgModule({
   declarations: [
-    
     InputComponent,
     AlertComponent,
   ],

@@ -17,7 +17,7 @@ export class StudentPageComponent {
 
   allUsers: any;
   async getUsers() {
-    this.allUsers = await this.userService.getAllUsers();
+    this.allUsers = await this.userService.getAllInstructors();
     this.users = this.allUsers;
     console.log(this.users)
   }
