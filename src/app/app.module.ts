@@ -20,6 +20,7 @@ import { InstructorPageComponent } from './pages/instructor-page/instructor-page
 import { SearchComponent } from './pages/search/search.component';
 import { InstructorProfileComponent } from './pages/instructor-profile/instructor-profile.component';
 import { StudentPageComponent } from './pages/student-page/student-page.component';
+import { StudentProfileComponent } from './pages/student-profile/student-profile.component';
 
 @NgModule({
     declarations: [
@@ -35,7 +36,8 @@ import { StudentPageComponent } from './pages/student-page/student-page.componen
         InstructorPageComponent,
         SearchComponent,
         InstructorProfileComponent,
-        StudentPageComponent
+        StudentPageComponent,
+        StudentProfileComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -47,7 +49,8 @@ import { StudentPageComponent } from './pages/student-page/student-page.componen
         AngularFirestoreModule,
         ReactiveFormsModule,
         FormsModule,
-        SharedModule
+        SharedModule,
+       
     ]
 })
 export class AppModule { }
