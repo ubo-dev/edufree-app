@@ -125,6 +125,138 @@
         <form
           [formGroup]="registerForm"
           (ngSubmit)="register()"
+          *ngIf="isTeacher"
+          class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2"
+        >
+          <div>
+            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+              >First Name</label
+            >
+            <app-input [control]="name" placeholder="Enter Name"></app-input>
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+              >Last name</label
+            >
+            <app-input
+              [control]="lastName"
+              placeholder="Enter Last Name"
+            ></app-input>
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+              >Phone number</label
+            >
+            <app-input
+              [control]="phoneNumber"
+              format="(000)000-0000"
+              placeholder="Enter Phone Number"
+            ></app-input>
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+              >Email address</label
+            >
+            <app-input
+              [control]="email"
+              type="email"
+              placeholder="Enter Email"
+            ></app-input>
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+              >Password</label
+            >
+            <app-input
+              [control]="password"
+              type="password"
+              placeholder="Enter Password"
+            >
+            </app-input>
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+              >Confirm password</label
+            >
+            <app-input
+              [control]="confirm_password"
+              type="password"
+              placeholder="Confirm Password"
+            >
+            </app-input>
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+              >University</label
+            >
+            <app-input [control]="university" placeholder="University">
+            </app-input>
+          </div>
+
+          <div class="w-full grid place-content-stretch">
+            <label
+              class="block mb-2 text-sm text-gray-600 dark:text-gray-200 w-full"
+              >Department</label
+            >
+            <app-input [control]="department" placeholder="Department">
+            </app-input>
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+              >Description</label
+            >
+            <app-input
+              [control]="description"
+              placeholder="Tell us about yourself"
+            >
+            </app-input>
+          </div>
+          <div class="grid place-items-start w-full">
+            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+              >Courses you willing to give</label
+            >
+
+            <div class="card flex justify-content-start">
+              <p-multiSelect
+                emptyMessage="Your custom message"
+                [options]="course"
+                optionLabel="name"
+                placeholder="Select Courses"
+                [filter]="true"
+                formControlName="courses"
+                [style]="{
+                  width: '325px',
+                  height: '40px',
+                  'background-color': '#111827',
+                  'border-radius': '0.3rem',
+                  border: '1px solid #9ca3af'
+                }"
+              ></p-multiSelect>
+            </div>
+          </div>
+
+          <div class="mt-10 h-14">
+            <button
+              type="submit"
+              class="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:bg-blue-400 focus:ring focus:ring-blue-300 focus:ring-opacity-50 disabled:opacity-50"
+              [disabled]="registerForm.invalid || inSubmission"
+            >
+              Sign Up
+            </button>
+          </div>
+        </form>
+
+        <form
+          [formGroup]="registerForm"
+          (ngSubmit)="register()"
+          *ngIf="!isTeacher"
           class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2"
         >
           <div>
@@ -192,9 +324,9 @@
 
           <div class="mt-10 h-14">
             <button
-            type="submit"
-            class="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:bg-blue-400 focus:ring focus:ring-blue-300 focus:ring-opacity-50 disabled:opacity-50"
-            [disabled]="registerForm.invalid || inSubmission"
+              type="submit"
+              class="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:bg-blue-400 focus:ring focus:ring-blue-300 focus:ring-opacity-50 disabled:opacity-50"
+              [disabled]="registerForm.invalid || inSubmission"
             >
               Sign Up
             </button>

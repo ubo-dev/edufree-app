@@ -7,12 +7,12 @@ import { Injectable } from '@angular/core';
 export class UserService {
   constructor(private db: AngularFirestore) {}
 
-  getAllUsers() {
+  getAllInstructors() {
     return new Promise<any>((resolve) => {
       this.db
-        .collection('users')
+        .collection('instructors')
         .valueChanges({ idField: 'id' })
-        .subscribe((users) => resolve(users));
+        .subscribe((instructors) => resolve(instructors));
     });
   }
 }

@@ -13,41 +13,44 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment.development';
-import { ReactiveFormsModule,FormsModule } from '@angular/forms';
-import { SharedModule } from "./shared/shared.module";
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { SharedModule } from './shared/shared.module';
 import { RegisterValidatorsComponent } from './validators/register-validators/register-validators.component';
 import { InstructorPageComponent } from './pages/instructor-page/instructor-page.component';
 import { SearchComponent } from './pages/search/search.component';
 import { InstructorProfileComponent } from './pages/instructor-profile/instructor-profile.component';
-import { StudentPageComponent } from './pages/student-page/student-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MultiSelectModule } from 'primeng/multiselect';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        FooterComponent,
-        NavbarComponent,
-        HomeComponent,
-        RegisterComponent,
-        StatusComponent,
-        LoginTeacherComponent,
-        LoginStudentComponent,
-        RegisterValidatorsComponent,
-        InstructorPageComponent,
-        SearchComponent,
-        InstructorProfileComponent,
-        StudentPageComponent
-    ],
-    providers: [],
-    bootstrap: [AppComponent],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        AngularFireModule.initializeApp(environment.firebaseConfig),
-        AngularFireAuthModule,
-        AngularFirestoreModule,
-        ReactiveFormsModule,
-        FormsModule,
-        SharedModule
-    ]
+  declarations: [
+    AppComponent,
+    FooterComponent,
+    NavbarComponent,
+    HomeComponent,
+    RegisterComponent,
+    StatusComponent,
+    LoginTeacherComponent,
+    LoginStudentComponent,
+    RegisterValidatorsComponent,
+    InstructorPageComponent,
+    SearchComponent,
+    InstructorProfileComponent,
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    ReactiveFormsModule,
+    FormsModule,
+    SharedModule,
+    MultiSelectModule,
+    BrowserAnimationsModule,
+    
+  ],
 })
-export class AppModule { }
+export class AppModule {}

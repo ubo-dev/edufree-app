@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Instructor from 'src/app/models/instructor.model';
 import IUser from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
 
@@ -10,33 +11,37 @@ import { UserService } from 'src/app/services/user.service';
 export class SearchComponent implements OnInit {
   constructor(private userService: UserService) {}
 
-  public users: IUser[] = [];
+  public instructors: Instructor[] = [];
   ngOnInit(): void {
-    this.getUsers();
+    this.getInstructors();
   }
 
-  allUsers: any;
-  async getUsers() {
-    this.allUsers = await this.userService.getAllUsers();
-    this.users = this.allUsers;
-    console.log(this.users)
+  allInstructors: any;
+  async getInstructors() {
+    this.allInstructors = await this.userService.getAllInstructors();
+    this.instructors = this.allInstructors;
+    console.log(this.instructors)
   }
   public searchUsers(key: string): void {
     console.log(key);
-    const results: IUser[] = [];
-    for (const user of this.users) {
-      if (user.name.toLowerCase().indexOf(key.toLowerCase()) !== -1
-      || user.lastName.toLowerCase().indexOf(key.toLowerCase()) !== -1
-      || user.email.toLowerCase().indexOf(key.toLowerCase()) !== -1
-      || user.phoneNumber.toLowerCase().indexOf(key.toLowerCase()) !== -1
+    const results: Instructor[] = [];
+    for (const instructor of this.instructors) {
+      if (instructor.name.toLowerCase().indexOf(key.toLowerCase()) !== -1
+      || instructor.lastName.toLowerCase().indexOf(key.toLowerCase()) !== -1
+      || instructor.email.toLowerCase().indexOf(key.toLowerCase()) !== -1
+      || instructor.phoneNumber.toLowerCase().indexOf(key.toLowerCase()) !== -1
+      || instructor.university.toLowerCase().indexOf(key.toLowerCase()) !== -1
+      || instructor.department.toLowerCase().indexOf(key.toLowerCase()) !== -1
+      || instructor.description.toLowerCase().indexOf(key.toLowerCase()) !== -1
+      || instructor.courses.toString().toLowerCase().indexOf(key.toLowerCase()) !== -1 
       ) {
-        results.push(user);
+        results.push(instructor);
       }
     }
-    this.users = results;
-    console.log(this.users);
+    this.instructors = results;
+    console.log(this.instructors);
     if (results.length === 0 || !key) {
-      this.getUsers();
+      this.getInstructors();
     }
   }
 }

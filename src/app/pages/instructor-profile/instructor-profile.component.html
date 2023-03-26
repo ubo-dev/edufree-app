@@ -1,21 +1,4 @@
-<!-- component -->
-
-<!--
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
--->
-<!-- component -->
-<section class=" bg-gray-100 bg-opacity-50 h-screen">
+<section class="bg-gray-100 bg-opacity-50 h-screen">
   <div
     class="flex flex-col justify-center items-center relative bg-opacity-50 text-white"
   >
@@ -106,7 +89,7 @@
         <h2 class="md:w-1/3 mx-auto max-w-sm">Personal info</h2>
         <div class="md:w-2/3 mx-auto max-w-sm space-y-5">
           <div>
-            <label class="text-sm text-gray-400">Full name</label>
+            <label class="text-sm text-gray-400">First name</label>
             <div class="w-full inline-flex border">
               <div class="w-1/12 pt-2 bg-gray-100">
                 <svg
@@ -126,7 +109,32 @@
               <input
                 type="text"
                 class="w-11/12 focus:outline-none focus:text-gray-600 p-2"
-                placeholder="Charly Olivas"
+                placeholder="Enter your first name"
+              />
+            </div>
+          </div>
+          <div>
+            <label class="text-sm text-gray-400">Last name</label>
+            <div class="w-full inline-flex border">
+              <div class="w-1/12 pt-2 bg-gray-100">
+                <svg
+                  fill="none"
+                  class="w-6 text-gray-400 mx-auto"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                  />
+                </svg>
+              </div>
+              <input
+                type="text"
+                class="w-11/12 focus:outline-none focus:text-gray-600 p-2"
+                placeholder="Enter your last name"
               />
             </div>
           </div>
@@ -151,69 +159,153 @@
               <input
                 type="text"
                 class="w-11/12 focus:outline-none focus:text-gray-600 p-2"
-                placeholder="12341234"
+                placeholder="(000)000-0000"
               />
             </div>
+          </div>
+          <div>
+            <label class="text-sm text-gray-400">Description</label>
+            <div class="w-full inline-flex border">
+              <textarea
+                class="flex-1 w-full px-4 py-2 text-base text-gray-700 placeholder-gray-400 bg-white border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-transparent"
+                id="description"
+                name="comment"
+                rows="5"
+                cols="40"
+              ></textarea>
+            </div>
+            
           </div>
         </div>
       </div>
 
       <hr />
+
       <div
-        class="md:inline-flex w-full space-y-4 md:space-y-0 p-8 text-gray-500 items-center"
+        class="md:inline-flex space-y-4 md:space-y-0 w-full p-4 text-gray-500 items-center"
       >
-        <h2 class="md:w-4/12 max-w-sm mx-auto">Change password</h2>
-
-        <div
-          class="md:w-5/12 w-full md:pl-9 max-w-sm mx-auto space-y-5 md:inline-flex pl-2"
-        >
-          <div class="w-full inline-flex border-b">
-            <div class="w-1/12 pt-2">
-              <svg
-                fill="none"
-                class="w-6 text-gray-400 mx-auto"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                />
-              </svg>
-            </div>
-            <input
-              type="password"
-              class="w-11/12 focus:outline-none focus:text-gray-600 p-2 ml-4"
-              placeholder="New"
-            />
-          </div>
-        </div>
-
-        <div class="md:w-3/12 text-center md:pl-6">
-          <button
-            class="text-white w-full mx-auto max-w-sm rounded-md text-center bg-indigo-400 py-2 px-4 inline-flex items-center focus:outline-none md:float-right"
-          >
-            <svg
-              fill="none"
-              class="w-4 text-white mr-2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+        <h2 class="md:w-1/3 mx-auto max-w-sm">Education</h2>
+        <div class="md:w-2/3 mx-auto max-w-sm space-y-5">
+          <div>
+            <label class="text-sm text-gray-400">University</label>
+            <div class="w-full inline-flex border">
+              <div class="w-1/12 pt-2 bg-gray-100">
+                <svg
+                  fill="none"
+                  class="w-6 text-gray-400 mx-auto"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1"
+                    d="M8.627,7.885C8.499,8.388,7.873,8.101,8.13,8.177L4.12,7.143c-0.218-0.057-0.351-0.28-0.293-0.498c0.057-0.218,0.279-0.351,0.497-0.294l4.011,1.037C8.552,7.444,8.685,7.667,8.627,7.885 M8.334,10.123L4.323,9.086C4.105,9.031,3.883,9.162,3.826,9.38C3.769,9.598,3.901,9.82,4.12,9.877l4.01,1.037c-0.262-0.062,0.373,0.192,0.497-0.294C8.685,10.401,8.552,10.18,8.334,10.123 M7.131,12.507L4.323,11.78c-0.218-0.057-0.44,0.076-0.497,0.295c-0.057,0.218,0.075,0.439,0.293,0.495l2.809,0.726c-0.265-0.062,0.37,0.193,0.495-0.293C7.48,12.784,7.35,12.562,7.131,12.507M18.159,3.677v10.701c0,0.186-0.126,0.348-0.306,0.393l-7.755,1.948c-0.07,0.016-0.134,0.016-0.204,0l-7.748-1.948c-0.179-0.045-0.306-0.207-0.306-0.393V3.677c0-0.267,0.249-0.461,0.509-0.396l7.646,1.921l7.654-1.921C17.91,3.216,18.159,3.41,18.159,3.677 M9.589,5.939L2.656,4.203v9.857l6.933,1.737V5.939z M17.344,4.203l-6.939,1.736v9.859l6.939-1.737V4.203z M16.168,6.645c-0.058-0.218-0.279-0.351-0.498-0.294l-4.011,1.037c-0.218,0.057-0.351,0.28-0.293,0.498c0.128,0.503,0.755,0.216,0.498,0.292l4.009-1.034C16.092,7.085,16.225,6.863,16.168,6.645 M16.168,9.38c-0.058-0.218-0.279-0.349-0.498-0.294l-4.011,1.036c-0.218,0.057-0.351,0.279-0.293,0.498c0.124,0.486,0.759,0.232,0.498,0.294l4.009-1.037C16.092,9.82,16.225,9.598,16.168,9.38 M14.963,12.385c-0.055-0.219-0.276-0.35-0.495-0.294l-2.809,0.726c-0.218,0.056-0.351,0.279-0.293,0.496c0.127,0.506,0.755,0.218,0.498,0.293l2.807-0.723C14.89,12.825,15.021,12.603,14.963,12.385"
+                  />
+                </svg>
+              </div>
+              <input
+                type="text"
+                class="w-11/12 focus:outline-none focus:text-gray-600 p-2"
+                placeholder="University"
               />
-            </svg>
-            Update
-          </button>
+            </div>
+          </div>
+          <div>
+            <label class="text-sm text-gray-400">Department</label>
+            <div class="w-full inline-flex border">
+              <div class="w-1/12 pt-2 bg-gray-100">
+                <svg
+                  fill="none"
+                  class="w-6 text-gray-400 mx-auto"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                  />
+                </svg>
+              </div>
+              <input
+                type="text"
+                class="w-11/12 focus:outline-none focus:text-gray-600 p-2"
+                placeholder="Department"
+              />
+            </div>
+          </div>
+          <div>
+            <label class="text-sm text-gray-400">Courses</label>
+            <div class="w-full inline-flex border">
+              <div class="pt-2 w-1/12 bg-gray-100">
+                <svg
+                  fill="none"
+                  class="w-6 text-gray-400 mx-auto"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <svg
+                    class="svg-icon"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1"
+                  >
+                    <path
+                      fill="none"
+                      d="M17.222,5.041l-4.443-4.414c-0.152-0.151-0.356-0.235-0.571-0.235h-8.86c-0.444,0-0.807,0.361-0.807,0.808v17.602c0,0.448,0.363,0.808,0.807,0.808h13.303c0.448,0,0.808-0.36,0.808-0.808V5.615C17.459,5.399,17.373,5.192,17.222,5.041zM15.843,17.993H4.157V2.007h7.72l3.966,3.942V17.993z"
+                    ></path>
+                    <path
+                      fill="none"
+                      d="M5.112,7.3c0,0.446,0.363,0.808,0.808,0.808h8.077c0.445,0,0.808-0.361,0.808-0.808c0-0.447-0.363-0.808-0.808-0.808H5.92C5.475,6.492,5.112,6.853,5.112,7.3z"
+                    ></path>
+                    <path
+                      fill="none"
+                      d="M5.92,5.331h4.342c0.445,0,0.808-0.361,0.808-0.808c0-0.446-0.363-0.808-0.808-0.808H5.92c-0.444,0-0.808,0.361-0.808,0.808C5.112,4.97,5.475,5.331,5.92,5.331z"
+                    ></path>
+                    <path
+                      fill="none"
+                      d="M13.997,9.218H5.92c-0.444,0-0.808,0.361-0.808,0.808c0,0.446,0.363,0.808,0.808,0.808h8.077c0.445,0,0.808-0.361,0.808-0.808C14.805,9.58,14.442,9.218,13.997,9.218z"
+                    ></path>
+                    <path
+                      fill="none"
+                      d="M13.997,11.944H5.92c-0.444,0-0.808,0.361-0.808,0.808c0,0.446,0.363,0.808,0.808,0.808h8.077c0.445,0,0.808-0.361,0.808-0.808C14.805,12.306,14.442,11.944,13.997,11.944z"
+                    ></path>
+                  </svg>
+                </svg>
+              </div>
+              <input
+                type="text"
+                class="w-11/12 focus:outline-none focus:text-gray-600 p-2"
+                placeholder="Enter courses you can give as course1-course2"
+              />
+            </div>
+          </div>
         </div>
       </div>
 
       <hr />
+      <div class="md:w-3/12 text-center md:pl-6">
+        <button
+          class="text-white w-full mx-auto max-w-sm rounded-md text-center bg-indigo-400 py-2 px-4 inline-flex items-center focus:outline-none md:float-right"
+        >
+          <svg
+            fill="none"
+            class="w-4 text-white mr-2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+            />
+          </svg>
+          Update
+        </button>
+      </div>
       <div class="w-full p-4 text-right text-gray-500">
         <button class="inline-flex items-center focus:outline-none mr-4">
           <svg
@@ -235,118 +327,3 @@
     </div>
   </div>
 </section>
-
-<!--
-<div class="relative shadow-2xl overflow-hidden">
-    <div class="h-52 bg-slate-500 relative" >
-      <div class="flex flex-col justify-center items-center relative h-full bg-opacity-50 text-white">
-        <div class="grid grid-cols-10 gap-1 place-items-start mt-3">
-            <a
-              routerLink="/"
-              class="relative inline-flex items-center justify-center ml-5 px-6 py-3 mt-5 mr-4 overflow-hidden font-medium text-white transition duration-300 ease-out border-2 border-gray-900 rounded-full shadow-md group"
-            >
-              <span
-                class="absolute inset-0 flex items-center justify-center h-full text-white duration-300 -translate-x-full bg-gray-900 group-hover:translate-x-0 ease"
-              >
-                <svg
-                  class="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  ></path>
-                </svg>
-              </span>
-              <span
-                class="absolute flex items-center justify-center w-full h-full text-gray-900 transition-all duration-300 transform group-hover:translate-x-full ease"
-                >Back to Home</span
-              >
-              <span class="relative invisible">Button Text</span>
-            </a>
-          </div>
-        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" class="h-34 w-32 object-cover rounded-full">
-        <h1 class="text-2xl font-semibold mb-12">Antonia Howell</h1>
-      </div>
-    </div>
-    <div class="grid grid-cols-12 bg-white ">
-  
-      <div class="col-span-12 w-full px-3 py-6 justify-center flex space-x-4 border-b border-solid md:space-x-0 md:space-y-4 md:flex-col md:col-span-2 md:justify-start ">
-  
-        <a href="#" class="text-sm p-2 bg-indigo-900 text-white text-center rounded font-bold">Basic Information</a>
-  
-        <a href="#" class="text-sm p-2 bg-indigo-200 text-center rounded font-semibold hover:bg-indigo-700 hover:text-gray-200">Another Information</a>
-  
-        <a href="#" class="text-sm p-2 bg-indigo-200 text-center rounded font-semibold hover:bg-indigo-700 hover:text-gray-200">Another Something</a>
-  
-      </div>
-  
-      <div class="col-span-12 md:border-solid md:border-l md:border-black md:border-opacity-25 h-full pb-12 md:col-span-10">
-        <div class="px-4 pt-4">
-          <form action="#" class="flex flex-col space-y-8">
-  
-            <div>
-              <h3 class="text-2xl font-semibold">Basic Information</h3>
-              <hr>
-            </div>
-  
-            <div class="form-item">
-              <label class="text-xl ">Full Name</label>
-              <input type="text" value="Antonia P. Howell" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200" disabled>
-            </div>
-  
-            <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4">
-  
-              <div class="form-item w-full">
-                <label class="text-xl ">Username</label>
-                <input type="text" value="antonia" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 " disabled>
-              </div>
-  
-              <div class="form-item w-full">
-                <label class="text-xl ">Email</label>
-                <input type="text" value="antoniaph@gmail.com" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 " disabled>
-              </div>
-            </div>
-  
-            <div>
-              <h3 class="text-2xl font-semibold ">More About Me</h3>
-              <hr>
-            </div>
-  
-            <div class="form-item w-full">
-              <label class="text-xl ">Biography</label>
-              <textarea cols="30" rows="10" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 " disabled>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem natus nobis odio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, eveniet fugiat? Explicabo assumenda dignissimos quisquam perspiciatis corporis sint commodi cumque rem tempora!</textarea>
-            </div>
-  
-            <div>
-              <h3 class="text-2xl font-semibold">My Social Media</h3>
-              <hr>
-            </div>
-  
-            <div class="form-item">
-              <label class="text-xl ">Instagram</label>
-              <input type="text" value="https://instagram.com/" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 " disabled>
-            </div>
-            <div class="form-item">
-              <label class="text-xl ">Facebook</label>
-              <input type="text" value="https://facebook.com/" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 " disabled>
-            </div>
-            <div class="form-item">
-              <label class="text-xl ">Twitter</label>
-              <input type="text" value="https://twitter.com/" class="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 " disabled>
-            </div>
-  
-          </form>
-        </div>
-      </div>
-  
-  
-    </div>
-  </div>
-
--->

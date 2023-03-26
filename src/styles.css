@@ -3,6 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "primeng/resources/themes/lara-dark-indigo/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+
 .svg-icon {
     width: 3.5em;
     height: 3.5em;

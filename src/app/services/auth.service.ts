@@ -4,47 +4,70 @@ import {
   AngularFirestore,
   AngularFirestoreCollection,
 } from '@angular/fire/compat/firestore';
-import { Router, ActivatedRoute } from '@angular/router';
-import IUser from '../models/user.model';
+import Instructor from '../models/instructor.model';
+import Student from '../models/student.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private usersCollection: AngularFirestoreCollection<IUser>;
+  private instructorCollection: AngularFirestoreCollection<Instructor>;
+  private studentCollection: AngularFirestoreCollection<Student>;
 
   constructor(
     private auth: AngularFireAuth,
     private db: AngularFirestore,
-    private router: Router,
-    private route: ActivatedRoute
   ) {
-    this.usersCollection = this.db.collection('users');
+    this.instructorCollection = this.db.collection('instructors');
+    this.studentCollection = this.db.collection('students');
   }
 
-  public async createUser(userData: IUser) {
-    if (!userData.password) {
-      throw new Error('Password not provided.');
-    }
+  public async createInstructor(instructorData: Instructor) {
 
-    const userCred = await this.auth.createUserWithEmailAndPassword(
-      userData.email as string,
-      userData.password as string
+    const instructorCred = await this.auth.createUserWithEmailAndPassword(
+      instructorData.email as string,
+      instructorData.password as string
     );
-    if (!userCred.user) {
+    if (!instructorCred.user) {
       throw new Error('User not created.');
     }
 
-    await this.usersCollection.doc(userCred.user.uid).set({
-      name: userData.name,
-      lastName: userData.lastName,
-      email: userData.email,
-      phoneNumber: userData.phoneNumber,
-      isInstructor: userData.isInstructor
+    await this.instructorCollection.doc(instructorCred.user.uid).set({
+      name: instructorData.name,
+      lastName: instructorData.lastName,
+      email: instructorData.email,
+      phoneNumber: instructorData.phoneNumber,
+      university: instructorData.university,
+      department: instructorData.department,
+      description: instructorData.description,
+      courses: instructorData.courses,
     });
 
-    await userCred.user.updateProfile({
-      displayName: userData.name,
+    await instructorCred.user.updateProfile({
+      displayName: instructorData.name,
     });
   }
+
+  public async createStudent(studentData: Student) {
+
+    const studentCred = await this.auth.createUserWithEmailAndPassword(
+      studentData.email as string,
+      studentData.password as string
+    );
+    if (!studentCred.user) {
+      throw new Error('User not created.');
+    }
+
+    await this.studentCollection.doc(studentCred.user.uid).set({
+      name: studentData.name,
+      lastName: studentData.lastName,
+      email: studentData.email,
+      phoneNumber: studentData.phoneNumber
+    });
+
+    await studentCred.user.updateProfile({
+      displayName: studentData.name,
+    });
+  }
+
 }
