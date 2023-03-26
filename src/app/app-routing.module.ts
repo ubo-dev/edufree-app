@@ -8,7 +8,8 @@ import { LoginStudentComponent } from './pages/login/login-student/login-student
 import { SearchComponent } from './pages/search/search.component';
 import { InstructorProfileComponent } from './pages/instructor-profile/instructor-profile.component';
 import { InstructorPageComponent } from './pages/instructor-page/instructor-page.component';
-
+import { StudentPageComponent } from './pages/student-page/student-page.component';
+import { StudentProfileComponent } from './pages/student-profile/student-profile.component';
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full"},
   { path: "home", component: HomeComponent },
@@ -19,6 +20,8 @@ const routes: Routes = [
   { path: "instructor-page", component: InstructorPageComponent},
   { path: "instructor-page/edit", component: InstructorProfileComponent},
   { path: "search", component: SearchComponent},
+  { path: "student-page", component: StudentPageComponent},
+  { path: "student-page/edit", component: StudentProfileComponent},
   { path: "**", redirectTo: "home" }
   
 ];
