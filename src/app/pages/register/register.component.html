@@ -124,7 +124,87 @@
 
         <form
           [formGroup]="registerForm"
-          (ngSubmit)="register()"
+          (ngSubmit)="registerStudent()"
+          *ngIf="!isTeacher"
+          class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2"
+        >
+          <div>
+            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+              >First Name</label
+            >
+            <app-input [control]="name" placeholder="Enter Name"></app-input>
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+              >Last name</label
+            >
+            <app-input
+              [control]="lastName"
+              placeholder="Enter Last Name"
+            ></app-input>
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+              >Phone number</label
+            >
+            <app-input
+              [control]="phoneNumber"
+              format="(000)000-0000"
+              placeholder="Enter Phone Number"
+            ></app-input>
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+              >Email address</label
+            >
+            <app-input
+              [control]="email"
+              type="email"
+              placeholder="Enter Email"
+            ></app-input>
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+              >Password</label
+            >
+            <app-input
+              [control]="password"
+              type="password"
+              placeholder="Enter Password"
+            >
+            </app-input>
+          </div>
+
+          <div>
+            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+              >Confirm password</label
+            >
+            <app-input
+              [control]="confirm_password"
+              type="password"
+              placeholder="Confirm Password"
+            >
+            </app-input>
+          </div>
+
+          <div class="mt-10 h-14">
+            <button
+              type="submit"
+              class="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:bg-blue-400 focus:ring focus:ring-blue-300 focus:ring-opacity-50 disabled:opacity-50"
+              [disabled]="inSubmission"
+            >
+              Sign Up
+            </button>
+          </div>
+        </form>
+
+        <form
+          [formGroup]="registerForm"
+          (ngSubmit)="registerInstructor()"
           *ngIf="isTeacher"
           class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2"
         >
@@ -240,86 +320,6 @@
                 }"
               ></p-multiSelect>
             </div>
-          </div>
-
-          <div class="mt-10 h-14">
-            <button
-              type="submit"
-              class="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:bg-blue-400 focus:ring focus:ring-blue-300 focus:ring-opacity-50 disabled:opacity-50"
-              [disabled]="registerForm.invalid || inSubmission"
-            >
-              Sign Up
-            </button>
-          </div>
-        </form>
-
-        <form
-          [formGroup]="registerForm"
-          (ngSubmit)="register()"
-          *ngIf="!isTeacher"
-          class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2"
-        >
-          <div>
-            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
-              >First Name</label
-            >
-            <app-input [control]="name" placeholder="Enter Name"></app-input>
-          </div>
-
-          <div>
-            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
-              >Last name</label
-            >
-            <app-input
-              [control]="lastName"
-              placeholder="Enter Last Name"
-            ></app-input>
-          </div>
-
-          <div>
-            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
-              >Phone number</label
-            >
-            <app-input
-              [control]="phoneNumber"
-              format="(000)000-0000"
-              placeholder="Enter Phone Number"
-            ></app-input>
-          </div>
-
-          <div>
-            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
-              >Email address</label
-            >
-            <app-input
-              [control]="email"
-              type="email"
-              placeholder="Enter Email"
-            ></app-input>
-          </div>
-
-          <div>
-            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
-              >Password</label
-            >
-            <app-input
-              [control]="password"
-              type="password"
-              placeholder="Enter Password"
-            >
-            </app-input>
-          </div>
-
-          <div>
-            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
-              >Confirm password</label
-            >
-            <app-input
-              [control]="confirm_password"
-              type="password"
-              placeholder="Confirm Password"
-            >
-            </app-input>
           </div>
 
           <div class="mt-10 h-14">

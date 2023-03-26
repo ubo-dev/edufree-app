@@ -5,6 +5,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import Instructor from 'src/app/models/instructor.model';
 import Course from 'src/app/models/course.model';
+import Student from 'src/app/models/student.model';
 
 @Component({
   selector: 'app-register',
@@ -93,11 +94,11 @@ export class RegisterComponent implements OnInit {
     Validators.minLength(3),
   ]);
 
-  courses = new FormControl([''], [Validators.required]);
-
+  courses = new FormControl('', [Validators.required]);
+  
   registerForm = new FormGroup({
     name: this.name,
-    lastName: this.name,
+    lastName: this.lastName,
     email: this.email,
     password: this.password,
     confirm_password: this.confirm_password,
@@ -111,7 +112,34 @@ export class RegisterComponent implements OnInit {
   showAlert = false;
   alertMsg = 'Please wait! Your account is being created...';
   alertColor = 'blue';
-  async register() {
+
+  async registerStudent() {
+    const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+    this.showAlert = true;
+    this.alertMsg = 'Please wait! Your account is being created...';
+    this.alertColor = 'blue';
+    this.inSubmission = true;
+    try {
+      await this.auth.createStudent(this.registerForm.value as Student);
+    } catch (e) {
+      console.error(e);
+      this.alertMsg = 'An unexpected error occurred. Please try again later.';
+      this.alertColor = 'red';
+      this.inSubmission = false;
+      return;
+    }
+
+    this.alertMsg = 'Your account has been created successfully!';
+    this.alertColor = 'green';
+    await sleep(3000);
+    if (this.isTeacher) {
+      this.router.navigate(['/instructor-page']);
+    } else {
+      this.router.navigate(['/student-page']);
+    }
+  }
+
+  async registerInstructor() {
     const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
     this.showAlert = true;
     this.alertMsg = 'Please wait! Your account is being created...';
@@ -131,7 +159,7 @@ export class RegisterComponent implements OnInit {
     this.alertColor = 'green';
     await sleep(3000);
     if (this.isTeacher) {
-      this.router.navigate(['/instructors-page']);
+      this.router.navigate(['/instructor-page']);
     } else {
       this.router.navigate(['/student-page']);
     }

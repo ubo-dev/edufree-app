@@ -8,5 +8,5 @@ export default interface Instructor
     university: string;
     department: string;
     description: string;
-    courses: string[];
+    courses: string;
 }
