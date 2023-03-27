@@ -1,5 +1,6 @@
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-student',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./login-student.component.css'],
 })
 export class LoginStudentComponent {
-  constructor(private auth: AngularFireAuth) {}
+  constructor(private auth: AngularFireAuth,private router: Router) {}
   credentials = {
     email: '',
     password: '',
@@ -19,6 +20,7 @@ export class LoginStudentComponent {
   inSubmission = false;
 
   async login() {
+    const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
     this.showAlert = true;
     this.alertMsg = 'Please wait! We are logging you in.';
     this.alertColor = 'blue';
@@ -38,5 +40,7 @@ export class LoginStudentComponent {
     }
     this.alertMsg = 'You have been logged in successfully.';
     this.alertColor = 'green';
+    await sleep(3000);
+    this.router.navigate(['/student-page']);
   }
 }
