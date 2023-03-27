@@ -42,12 +42,12 @@ import { MultiSelectModule } from 'primeng/multiselect';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SharedModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
     ReactiveFormsModule,
     FormsModule,
-    SharedModule,
     MultiSelectModule,
     BrowserAnimationsModule,
     

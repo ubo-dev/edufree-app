@@ -95,8 +95,6 @@ export class AuthService {
 
     await this.auth.signOut();
 
-    if (this.redirect) {
-      await this.router.navigate(['/']);
-    }
+    this.router.navigate(['/']);
   }
 }
