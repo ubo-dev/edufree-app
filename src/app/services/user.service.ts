@@ -17,8 +17,8 @@ export class UserService {
     });
   }
 
-  getDocumentByUid(uid: string): Observable<any> {
-    const document: AngularFirestoreDocument<any> = this.db.collection('instructors').doc(uid);
+  getDocumentByUid(uid: string,collection: string): Observable<any> {
+    const document: AngularFirestoreDocument<any> = this.db.collection(collection).doc(uid);
     return document.snapshotChanges().pipe(
       map(action => {
         const data = action.payload.data();

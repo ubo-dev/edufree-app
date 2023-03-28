@@ -5,5 +5,4 @@ export default interface IUser
     name: string;
     lastName: string;
     phoneNumber: string;
-    isInstructor: boolean;
 }

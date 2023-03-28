@@ -9,15 +9,15 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./instructor-page.component.css'],
 })
 export class InstructorPageComponent implements OnInit{
-  constructor(private userService: UserService, private auth:AuthService) {}
-
-
-  
+  constructor(private userService: UserService, public auth:AuthService) {}
   document$!: Observable<any>;
   
   ngOnInit(): void {
-    this.document$ = this.userService.getDocumentByUid(this.auth.currentUserId);
+    this.document$ = this.userService.getDocumentByUid(this.auth.currentUserId, 'instructors');
   }
-
+  showMenu = false;
+  toggleNavbar(){
+    this.showMenu = !this.showMenu;
+  }
 
 }

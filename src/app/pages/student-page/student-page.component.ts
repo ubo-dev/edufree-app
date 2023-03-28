@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import IUser from 'src/app/models/user.model';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -7,18 +8,18 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './student-page.component.html',
   styleUrls: ['./student-page.component.css']
 })
-export class StudentPageComponent {
-  constructor(private userService: UserService) {}
-
-  public users: IUser[] = [];
+export class StudentPageComponent implements OnInit {
+  
+  constructor(private userService: UserService, public auth:AuthService) {}
+  document$!: Observable<any>;
+  
   ngOnInit(): void {
-    this.getUsers();
+    this.document$ = this.userService.getDocumentByUid(this.auth.currentUserId, 'students');
+  }
+  showMenu = false;
+  toggleNavbar(){
+    this.showMenu = !this.showMenu;
   }
 
-  allUsers: any;
-  async getUsers() {
-    this.allUsers = await this.userService.getAllInstructors();
-    this.users = this.allUsers;
-    console.log(this.users)
-  }
+
 }

@@ -21,8 +21,8 @@ import { SearchComponent } from './pages/search/search.component';
 import { InstructorProfileComponent } from './pages/instructor-profile/instructor-profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MultiSelectModule } from 'primeng/multiselect';
-import { CalendarComponent } from './pages/calendar/calendar.component';
-import { DxSchedulerModule } from 'devextreme-angular';
+import { StudentPageComponent } from './pages/student-page/student-page.component';
+import { StudentProfileComponent } from './pages/student-profile/student-profile.component';
 
 @NgModule({
   declarations: [
@@ -36,10 +36,10 @@ import { DxSchedulerModule } from 'devextreme-angular';
     LoginStudentComponent,
     InstructorPageComponent,
     InstructorProfileComponent,
+    StudentPageComponent,
+    StudentProfileComponent,
     SearchComponent,
-    CalendarComponent,
   ],
-  providers: [],
   bootstrap: [AppComponent],
   imports: [
     BrowserModule,
@@ -52,8 +52,7 @@ import { DxSchedulerModule } from 'devextreme-angular';
     FormsModule,
     MultiSelectModule,
     BrowserAnimationsModule,
-    DxSchedulerModule,
-    HttpClientModule
+    HttpClientModule,
   ],
 })
 export class AppModule {}
