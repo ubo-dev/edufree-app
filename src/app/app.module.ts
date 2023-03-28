@@ -25,8 +25,7 @@ import { StudentPageComponent } from './pages/student-page/student-page.componen
 import { StudentProfileComponent } from './pages/student-profile/student-profile.component';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
-import { FlatpickrModule } from 'angularx-flatpickr';
-import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { CalendarComponent } from './pages/calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +42,7 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
     StudentPageComponent,
     StudentProfileComponent,
     SearchComponent,
+    CalendarComponent
   ],
   bootstrap: [AppComponent],
   imports: [
@@ -57,9 +57,11 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
     MultiSelectModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    NgbModalModule,
-    FlatpickrModule.forRoot(),
-    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
   ],
+  exports: [CalendarModule],
 })
 export class AppModule {}
