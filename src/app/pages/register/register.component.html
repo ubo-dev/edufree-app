@@ -125,7 +125,7 @@
             <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
               >First Name</label
             >
-            <app-input [control]="name" placeholder="Enter Name"></app-input>
+            <app-input [control]="registerForm.controls.name" placeholder="Enter Name"></app-input>
           </div>
 
           <div>
@@ -133,7 +133,7 @@
               >Last name</label
             >
             <app-input
-              [control]="lastName"
+              [control]="registerForm.controls.lastName"
               placeholder="Enter Last Name"
             ></app-input>
           </div>
@@ -143,7 +143,7 @@
               >Phone number</label
             >
             <app-input
-              [control]="phoneNumber"
+              [control]="registerForm.controls.phoneNumber"
               format="(000)000-0000"
               placeholder="Enter Phone Number"
             ></app-input>
@@ -154,7 +154,7 @@
               >Email address</label
             >
             <app-input
-              [control]="email"
+              [control]="registerForm.controls.email"
               type="email"
               placeholder="Enter Email"
             ></app-input>
@@ -165,7 +165,7 @@
               >Password</label
             >
             <app-input
-              [control]="password"
+              [control]="registerForm.controls.password"
               type="password"
               placeholder="Enter Password"
             >
@@ -177,7 +177,7 @@
               >Confirm password</label
             >
             <app-input
-              [control]="confirm_password"
+              [control]="registerForm.controls.confirm_password"
               type="password"
               placeholder="Confirm Password"
             >
@@ -205,7 +205,7 @@
             <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
               >First Name</label
             >
-            <app-input [control]="name" placeholder="Enter Name"></app-input>
+            <app-input [control]="registerForm.controls.name" placeholder="Enter Name"></app-input>
           </div>
 
           <div>
@@ -213,7 +213,7 @@
               >Last name</label
             >
             <app-input
-              [control]="lastName"
+              [control]="registerForm.controls.lastName"
               placeholder="Enter Last Name"
             ></app-input>
           </div>
@@ -223,7 +223,7 @@
               >Phone number</label
             >
             <app-input
-              [control]="phoneNumber"
+              [control]="registerForm.controls.phoneNumber"
               format="(000)000-0000"
               placeholder="Enter Phone Number"
             ></app-input>
@@ -234,7 +234,7 @@
               >Email address</label
             >
             <app-input
-              [control]="email"
+              [control]="registerForm.controls.email"
               type="email"
               placeholder="Enter Email"
             ></app-input>
@@ -245,7 +245,7 @@
               >Password</label
             >
             <app-input
-              [control]="password"
+              [control]="registerForm.controls.password"
               type="password"
               placeholder="Enter Password"
             >
@@ -257,7 +257,7 @@
               >Confirm password</label
             >
             <app-input
-              [control]="confirm_password"
+              [control]="registerForm.controls.confirm_password"
               type="password"
               placeholder="Confirm Password"
             >
@@ -268,7 +268,7 @@
             <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
               >University</label
             >
-            <app-input [control]="university" placeholder="University">
+            <app-input [control]="registerForm.controls.university" placeholder="University">
             </app-input>
           </div>
 
@@ -277,7 +277,7 @@
               class="block mb-2 text-sm text-gray-600 dark:text-gray-200 w-full"
               >Department</label
             >
-            <app-input [control]="department" placeholder="Department">
+            <app-input [control]="registerForm.controls.department" placeholder="Department">
             </app-input>
           </div>
 
@@ -286,7 +286,7 @@
               >Description</label
             >
             <app-input
-              [control]="description"
+              [control]="registerForm.controls.description"
               placeholder="Tell us about yourself"
             >
             </app-input>
@@ -299,9 +299,10 @@
             <div>
               <p-multiSelect
                 [options]="course"
-                optionLabel="name"
-                [filter]="true"
                 formControlName="courses"
+                optionLabel="name"
+                defaultLabel="Select Courses"
+                [filter]="true"
                 [style]="{
                   width: '325px',
                   height: '40px',

@@ -10,24 +10,29 @@ import { InstructorProfileComponent } from './pages/instructor-profile/instructo
 import { InstructorPageComponent } from './pages/instructor-page/instructor-page.component';
 import { StudentPageComponent } from './pages/student-page/student-page.component';
 import { StudentProfileComponent } from './pages/student-profile/student-profile.component';
+import { AngularFireAuthGuard, redirectUnauthorizedTo } from '@angular/fire/compat/auth-guard';
+import { CalendarComponent } from './pages/calendar/calendar.component';
+
+const redirectUnauthorizedToHome = () => redirectUnauthorizedTo(['home']);
+
 const routes: Routes = [
-  { path: "", redirectTo: "home", pathMatch: "full"},
-  { path: "home", component: HomeComponent },
-  { path: "login-teacher", component: LoginTeacherComponent },
-  { path: "login-student", component: LoginStudentComponent },
-  { path: "register", component: RegisterComponent }, 
-  { path: "status", component: StatusComponent },
-  { path: "instructor-page", component: InstructorPageComponent},
-  { path: "instructor-page/edit", component: InstructorProfileComponent},
-  { path: "search", component: SearchComponent},
-  { path: "student-page", component: StudentPageComponent},
-  { path: "student-page/edit", component: StudentProfileComponent},
-  { path: "**", redirectTo: "home" }
-  
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'calendar', component: CalendarComponent },
+  { path: 'login-teacher', component: LoginTeacherComponent},
+  { path: 'login-student', component: LoginStudentComponent},
+  { path: 'register', component: RegisterComponent },
+  { path: 'status', component: StatusComponent },
+  { path: 'instructor-page', component: InstructorPageComponent, canActivate: [AngularFireAuthGuard], data:{authGuardPipe:redirectUnauthorizedToHome} },
+  { path: 'instructor-page/edit', component: InstructorProfileComponent,canActivate: [AngularFireAuthGuard], data:{authGuardPipe:redirectUnauthorizedToHome} },
+  { path: 'search', component: SearchComponent },
+  { path: 'student-page', component: StudentPageComponent, canActivate: [AngularFireAuthGuard], data:{authGuardPipe:redirectUnauthorizedToHome} },
+  { path: 'student-page/edit', component: StudentProfileComponent, canActivate: [AngularFireAuthGuard], data:{authGuardPipe:redirectUnauthorizedToHome} },
+  { path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -76,6 +76,7 @@
     </div>
   </div>
 </div>
+
 <div
   class="bg-gray-200 font-sans h-screen w-full flex flex-wrap gap-4 justify-center items-center"
 >
@@ -98,28 +99,35 @@
         <table class="text-xs my-3">
           <tbody>
             <tr>
-              <td class="px-2 py-2 text-gray-500 font-semibold">
+              <td class="px-2 py-2 text-gray-500 font-semibold">Email</td>
+              <td class="px-2 py-2">
                 {{ instructor.email }}
               </td>
             </tr>
             <tr>
-              <td class="px-2 py-2 text-gray-500 font-semibold">
+              <td class="px-2 py-2 text-gray-500 font-semibold">Phone Number</td>
+              <td class="px-2 py-2">
                 {{ instructor.phoneNumber }}
               </td>
             </tr>
             <tr>
-              <td class="px-2 py-2 text-gray-500 font-semibold">
+              <td class="px-2 py-2 text-gray-500 font-semibold">University</td>
+              <td class="px-2 py-2">
                 {{ instructor.university }}
               </td>
             </tr>
             <tr>
-              <td class="px-2 py-2 text-gray-500 font-semibold">
+              <td class="px-2 py-2 text-gray-500 font-semibold">Department</td>
+              <td class="px-2 py-2">
                 {{ instructor.department }}
               </td>
             </tr>
             <tr>
-              <td class="px-2 py-2 text-gray-500 font-semibold">
-                {{ instructor.courses }}
+              <td class="px-2 py-2 text-gray-500 font-semibold">Courses</td>
+              <td class="px-2 py-2">
+                <li *ngFor="let course of instructor.courses">
+                  {{ course.name.toString() }}
+                </li>
               </td>
             </tr>
           </tbody>
@@ -128,7 +136,7 @@
         <div class="text-center my-3">
           <a
             class="text-xs text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium"
-            href="#"
+            routerLink="/instructor-page/{{ instructor.name }}"
             >View Profile</a
           >
         </div>

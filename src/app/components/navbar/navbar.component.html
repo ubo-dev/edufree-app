@@ -43,11 +43,12 @@
         </li>
         <li class="flex items-center">
           <a
+          routerLink="/calendar"
             class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-sm uppercase font-bold"
             ><i
               class="lg:text-gray-300 text-gray-500 far fa-file-alt text-lg leading-lg mr-2"
             ></i>
-            About</a
+            Calendar</a
           >
         </li>
       </ul>
@@ -78,19 +79,20 @@
             <i class="fas fa-arrow-alt-circle-down"></i> Sign Up
           </button>
         </li>
-        <ng-template #authLinks>
-          <li class="flex items-center">
-            <button
-              class="bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3"
-              type="button"
-              style="transition: all 0.15s ease 0s"
-              routerLink="/student-page"
-              routerLinkActive="text-black-400"
-              [routerLinkActiveOptions]="{ exact: true }"
-            >
-              <i class="fas fa-arrow-alt-circle-down"></i> Profile
-            </button>
-          </li>
+        <ng-template #authLinks >
+            <li class="flex items-center">
+              <button
+                class="pi pi-user bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3"
+                type="button"
+                style="transition: all 0.15s ease 0s"
+                routerLink= "/instructor-page"
+                routerLinkActive="text-black-400"
+                [routerLinkActiveOptions]="{ exact: true }"
+              >
+                <i class="fas fa-arrow-alt-circle-down"></i>
+              </button>
+            </li>
+
           <li class="flex items-center">
             <button
               class="bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3"

@@ -1,6 +1,6 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import Instructor from 'src/app/models/instructor.model';
-import IUser from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -22,6 +22,8 @@ export class SearchComponent implements OnInit {
     this.instructors = this.allInstructors;
     console.log(this.instructors)
   }
+
+
   public searchUsers(key: string): void {
     console.log(key);
     const results: Instructor[] = [];

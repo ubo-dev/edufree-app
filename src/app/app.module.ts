@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -15,12 +16,13 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment.development';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
-import { RegisterValidatorsComponent } from './validators/register-validators/register-validators.component';
 import { InstructorPageComponent } from './pages/instructor-page/instructor-page.component';
 import { SearchComponent } from './pages/search/search.component';
 import { InstructorProfileComponent } from './pages/instructor-profile/instructor-profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { CalendarComponent } from './pages/calendar/calendar.component';
+import { DxSchedulerModule } from 'devextreme-angular';
 
 @NgModule({
   declarations: [
@@ -32,10 +34,10 @@ import { MultiSelectModule } from 'primeng/multiselect';
     StatusComponent,
     LoginTeacherComponent,
     LoginStudentComponent,
-    RegisterValidatorsComponent,
     InstructorPageComponent,
-    SearchComponent,
     InstructorProfileComponent,
+    SearchComponent,
+    CalendarComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -50,7 +52,8 @@ import { MultiSelectModule } from 'primeng/multiselect';
     FormsModule,
     MultiSelectModule,
     BrowserAnimationsModule,
-    
+    DxSchedulerModule,
+    HttpClientModule
   ],
 })
 export class AppModule {}

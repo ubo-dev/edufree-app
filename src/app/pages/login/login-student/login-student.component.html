@@ -1,5 +1,4 @@
 <!-- component -->
-<app-alert *ngIf="showAlert" [color]="alertColor"> {{ alertMsg }}</app-alert>
 
 <div class="bg-white dark:bg-gray-900">
   <div class="flex justify-center h-screen">
@@ -60,6 +59,8 @@
             Sign in to access your student account
           </p>
         </div>
+        <app-alert *ngIf="showAlert" [color]="alertColor"> {{ alertMsg }}</app-alert>
+
 
 
         <div class="mt-8">

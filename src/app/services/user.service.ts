@@ -1,5 +1,6 @@
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { Injectable } from '@angular/core';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -14,5 +15,16 @@ export class UserService {
         .valueChanges({ idField: 'id' })
         .subscribe((instructors) => resolve(instructors));
     });
+  }
+
+  getDocumentByUid(uid: string): Observable<any> {
+    const document: AngularFirestoreDocument<any> = this.db.collection('instructors').doc(uid);
+    return document.snapshotChanges().pipe(
+      map(action => {
+        const data = action.payload.data();
+        const id = action.payload.id;
+        return { id, ...data };
+      })
+    );
   }
 }

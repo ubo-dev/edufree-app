@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import Instructor from 'src/app/models/instructor.model';
 import Course from 'src/app/models/course.model';
 import Student from 'src/app/models/student.model';
+import { RegisterValidators } from '../validators/register-validators';
+import { EmailTaken } from '../validators/email-taken';
 
 @Component({
   selector: 'app-register',
@@ -19,12 +21,17 @@ import Student from 'src/app/models/student.model';
     `,
   ],
 })
+
+
+
 export class RegisterComponent implements OnInit {
   constructor(
     private auth: AuthService,
-    private db: AngularFirestore,
+    private emailTaken: EmailTaken,
     private router: Router
   ) {}
+
+
 
   course: Course[] = [];
   ngOnInit() {
@@ -64,49 +71,43 @@ export class RegisterComponent implements OnInit {
 
   inSubmission = false;
 
-  name = new FormControl('', [Validators.required, Validators.minLength(3)]);
-  lastName = new FormControl('', [
-    Validators.required,
-    Validators.minLength(3),
-  ]);
-  email = new FormControl('', [Validators.required, Validators.email]);
 
-  password = new FormControl('', [
-    Validators.required,
-    Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm),
-  ]);
-  confirm_password = new FormControl('', [Validators.required]);
-  phoneNumber = new FormControl('', [
-    Validators.required,
-    Validators.minLength(13),
-    Validators.maxLength(13),
-  ]);
-  university = new FormControl('', [
-    Validators.required,
-    Validators.minLength(3),
-  ]);
-  department = new FormControl('', [
-    Validators.required,
-    Validators.minLength(3),
-  ]);
-  description = new FormControl('', [
-    Validators.required,
-    Validators.minLength(3),
-  ]);
-
-  courses = new FormControl('', [Validators.required]);
-  
   registerForm = new FormGroup({
-    name: this.name,
-    lastName: this.lastName,
-    email: this.email,
-    password: this.password,
-    confirm_password: this.confirm_password,
-    phoneNumber: this.phoneNumber,
-    university: this.university,
-    department: this.department,
-    description: this.description,
-    courses: this.courses,
+    name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    lastName: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+    ]),
+    email: new FormControl(
+      '',
+      [Validators.required, Validators.email],
+      [this.emailTaken.validate]
+    ),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.pattern(
+        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm
+      ),
+    ]),
+    confirm_password: new FormControl('', [Validators.required]),
+    phoneNumber: new FormControl('', [
+      Validators.required,
+      Validators.minLength(13),
+      Validators.maxLength(13),
+    ]),
+    university: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+    ]),
+    department: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+    ]),
+    description: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+    ]),
+    courses: new FormControl([], [Validators.required]),
   });
 
   showAlert = false;

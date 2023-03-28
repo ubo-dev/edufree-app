@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
@@ -9,9 +9,11 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+  link = ''
   constructor(public auth: AuthService, private afAuth: AngularFireAuth, private router: Router) {
   }
 
+  
   showMenu = false;
   toggleNavbar(){
     this.showMenu = !this.showMenu;

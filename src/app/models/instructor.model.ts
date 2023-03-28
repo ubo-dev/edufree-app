@@ -1,3 +1,5 @@
+import Course from "./course.model";
+
 export default interface Instructor
 {
     name: string;
@@ -8,5 +10,5 @@ export default interface Instructor
     university: string;
     department: string;
     description: string;
-    courses: string;
+    courses: Course[];
 }

@@ -10,6 +10,7 @@ import { Observable, of } from 'rxjs';
 import { delay, map, filter, switchMap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { ActivatedRoute, NavigationEnd } from '@angular/router';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root',
@@ -20,28 +21,44 @@ export class AuthService {
   public isAuthenticated$: Observable<boolean>;
   public isAuthenticatedWithDelay$: Observable<boolean>;
   public redirect = false;
+  public authState: any = null;
+
 
   constructor(
     private auth: AngularFireAuth,
     private db: AngularFirestore,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private userService: UserService
   ) {
     this.instructorCollection = this.db.collection('instructors');
     this.studentCollection = this.db.collection('students');
     this.isAuthenticated$ = auth.user.pipe(map((user) => !!user));
     this.isAuthenticatedWithDelay$ = this.isAuthenticated$.pipe(delay(1000));
-    this.router.events.pipe(
-      filter((event) => event instanceof NavigationEnd),
-      map(e => this.route.firstChild),
-      switchMap(route => route?.data ?? of({})),
-    ).subscribe(data => {
-      this.redirect = data['authOnly'] ?? false;
-    })
+    this.auth.authState.subscribe((authState) => {
+      this.authState = authState;
+    });
+    this.router.events
+      .pipe(
+        filter((event) => event instanceof NavigationEnd),
+        map((e) => this.route.firstChild),
+        switchMap((route) => route?.data ?? of({}))
+      )
+      .subscribe((data) => {
+        this.redirect = data['authOnly'] ?? false;
+      });
   }
 
-  public async createInstructor(instructorData: Instructor) {
+  get isAuthenticatedUser(): boolean {
+    return this.authState !== null;
+  }
+  get currentUserId(): string {
+    return this.isAuthenticatedUser ? this.authState.uid : null;
+  }
 
+
+
+  public async createInstructor(instructorData: Instructor) {
     const instructorCred = await this.auth.createUserWithEmailAndPassword(
       instructorData.email as string,
       instructorData.password as string
@@ -67,7 +84,6 @@ export class AuthService {
   }
 
   public async createStudent(studentData: Student) {
-
     const studentCred = await this.auth.createUserWithEmailAndPassword(
       studentData.email as string,
       studentData.password as string
@@ -80,7 +96,7 @@ export class AuthService {
       name: studentData.name,
       lastName: studentData.lastName,
       email: studentData.email,
-      phoneNumber: studentData.phoneNumber
+      phoneNumber: studentData.phoneNumber,
     });
 
     await studentCred.user.updateProfile({
