@@ -6,7 +6,7 @@
 @import "primeng/resources/themes/md-light-indigo/theme.css";
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
-
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
 
 .svg-icon {
     width: 3.5em;
