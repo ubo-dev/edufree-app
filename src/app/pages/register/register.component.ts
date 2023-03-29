@@ -60,6 +60,31 @@ export class RegisterComponent implements OnInit {
         id: 6,
         name: 'Chemistry',
       },
+      {
+        id: 7,
+        name: 'Biology',
+      },
+      {
+        id: 8,
+        name: 'Science',
+      },
+      {
+        id: 9,
+        name: 'Turkish',
+      },
+      {
+        id: 10,
+        name: 'Geography',
+      },
+      {
+        id: 11,
+        name: 'Deucth',
+      },
+      {
+        id: 12,
+        name: 'French',
+      },
+
     ];
   }
   isTeacher: boolean = true;

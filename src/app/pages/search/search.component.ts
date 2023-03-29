@@ -35,7 +35,7 @@ export class SearchComponent implements OnInit {
       || instructor.university.toLowerCase().indexOf(key.toLowerCase()) !== -1
       || instructor.department.toLowerCase().indexOf(key.toLowerCase()) !== -1
       || instructor.description.toLowerCase().indexOf(key.toLowerCase()) !== -1
-      || instructor.courses.toString().toLowerCase().indexOf(key.toLowerCase()) !== -1 
+      || instructor.courses.map(c=>c.name).toString().toLowerCase().indexOf(key.toLowerCase()) !== -1 
       ) {
         results.push(instructor);
       }
