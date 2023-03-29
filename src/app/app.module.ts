@@ -26,7 +26,8 @@ import { StudentProfileComponent } from './pages/student-profile/student-profile
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { CalendarComponent } from './pages/calendar/calendar.component';
-
+import { ChatComponent } from './pages/chat/chat.component';
+import { ViewProfileComponent } from './view-profile/view-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,9 @@ import { CalendarComponent } from './pages/calendar/calendar.component';
     StudentPageComponent,
     StudentProfileComponent,
     SearchComponent,
-    CalendarComponent
+    CalendarComponent,
+    ChatComponent,
+    ViewProfileComponent,
   ],
   bootstrap: [AppComponent],
   imports: [

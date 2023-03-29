@@ -1,0 +1,137 @@
+<main class="profile-page">
+    <section class="relative block" style="height: 500px">
+      <div
+        class="absolute top-0 w-full h-full bg-center bg-cover"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1499336315816-097655dcfbda?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2710&amp;q=80');
+        "
+      >
+        <span
+          id="blackOverlay"
+          class="w-full h-full absolute opacity-50 bg-black"
+        ></span>
+      </div>
+      <div
+        class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
+        style="height: 70px"
+      >
+        <svg
+          class="absolute bottom-0 overflow-hidden"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          version="1.1"
+          viewBox="0 0 2560 100"
+          x="0"
+          y="0"
+        >
+          <polygon
+            class="text-gray-300 fill-current"
+            points="2560 0 2560 100 0 100"
+          ></polygon>
+        </svg>
+      </div>
+    </section>
+    <section class="relative py-16 bg-gray-300">
+      <div class="container mx-auto px-4">
+        <div
+          class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64"
+        >
+          <div class="px-6">
+            <div class="flex flex-wrap justify-center">
+              <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
+                <div class="relative">photo</div>
+              </div>
+              <div
+                class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center"
+              >
+                <div class="py-6 px-3 mt-32 sm:mt-0">
+                  <button
+                    class="w-16 h-9 pi pi-comments bg-blue-500 active:bg-blue-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
+                    type="button"
+                    style="transition: all 0.15s ease 0s"
+                    routerLink="/chat"
+                  >
+                    
+                  </button>
+                
+              
+                  <button
+                    class="w-16 h-9  pi pi-calendar bg-blue-500 active:bg-blue-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
+                    type="button"
+                    style="transition: all 0.15s ease 0s"
+                    routerLink="/calendar"
+                  >
+                    
+                  </button>
+                </div>
+              </div>
+              <div class="w-full lg:w-4/12 px-4 lg:order-1"></div>
+            </div>
+            <div *ngIf="document$ | async as user" class="text-center mt-12">
+              <h3
+                class="text-4xl font-semibold leading-normal mb-2 text-gray-800"
+              >
+                Ada Çakıroğlu 
+              </h3>
+              <div
+                class="text-sm leading-normal mt-0 mb-2 text-gray-500 font-bold uppercase"
+              >
+                <i class="fas fa-map-marker-alt mr-2 text-lg text-gray-500"></i>
+                Senior Software Developer
+              </div>
+              <div
+                class="text-sm leading-normal mt-0 mb-2 text-gray-500 font-bold uppercase"
+              >
+                Ankara Yıldırım Beyazıt University
+              </div>
+  
+              <div class="mb-2 text-gray-700 mt-10">
+                Computer Engineering
+              </div>
+              <div class="mb-2 text-gray-700">
+                adacakiroglu@gmail.com
+              </div>
+  
+              <div class="mt-10 py-10 border-t border-gray-300 text-center">
+                <div class="flex flex-wrap justify-center">
+                  <div class="w-full lg:w-9/12 px-4">
+                    <p class="mb-4 text-lg leading-relaxed text-gray-800">
+                        Hello, my name is Deniz Fazıloğlu, and I am a Senior Software Developer. I have
+                         graduated from Marmara University with a degree in Computer Engineering. I am proud to
+                         be a part of the Computer Engineering department, where I contribute my skills in software development and
+                          programming to solve complex problems and contribute to the development of cutting-edge technologies. In addition 
+                          to my work as a Senior Software Developer, I have also taught Mathematics courses, showcasing my versatility and 
+                          ability to communicate complex ideas to others. I am always eager to collaborate with others in the field of 
+                          software development and am dedicated to delivering innovative solutions to challenging problems.
+                           In my free time, I enjoy exploring new technologies, coding 
+                          personal projects, and keeping up-to-date with the latest developments in the field. If you would like to contact
+                           me, please feel free to reach out via chatbox.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-10 py-10 border-t border-gray-300 text-center">
+                <div class="flex flex-wrap justify-center">
+                  <div class="w-full lg:w-9/12 px-4">
+                    <p class="mb-4 text-lg leading-relaxed text-gray-800">
+                      Courses that are taught by this instructor are as follows:
+                    </p>
+                    <div>
+                      <ul>
+                        <li *ngFor="let course of user.courses">
+                          {{ course.name }}
+                        </li>
+                      </ul>
+                  </div> 
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  

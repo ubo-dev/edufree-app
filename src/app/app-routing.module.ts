@@ -12,7 +12,8 @@ import { StudentPageComponent } from './pages/student-page/student-page.componen
 import { StudentProfileComponent } from './pages/student-profile/student-profile.component';
 import { AngularFireAuthGuard, redirectUnauthorizedTo } from '@angular/fire/compat/auth-guard';
 import { CalendarComponent } from './pages/calendar/calendar.component';
-
+import { ChatComponent } from './pages/chat/chat.component';
+import { ViewProfileComponent } from './view-profile/view-profile.component';
 const redirectUnauthorizedToHome = () => redirectUnauthorizedTo(['home']);
 
 const routes: Routes = [
@@ -28,6 +29,9 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent },
   { path: 'student-page', component: StudentPageComponent, canActivate: [AngularFireAuthGuard], data:{authGuardPipe:redirectUnauthorizedToHome} },
   { path: 'student-page/edit', component: StudentProfileComponent, canActivate: [AngularFireAuthGuard], data:{authGuardPipe:redirectUnauthorizedToHome} },
+  { path: 'search/view-profile', component: ViewProfileComponent, canActivate: [AngularFireAuthGuard], data:{authGuardPipe:redirectUnauthorizedToHome} },
+  { path: 'chat', component: ChatComponent, canActivate: [AngularFireAuthGuard], data:{authGuardPipe:redirectUnauthorizedToHome}},
+  
   { path: '**', redirectTo: 'home' },
 ];
 

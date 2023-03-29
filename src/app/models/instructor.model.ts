@@ -11,4 +11,5 @@ export default interface Instructor
     department: string;
     description: string;
     courses: Course[];
+    imgUrl ?: string;
 }
