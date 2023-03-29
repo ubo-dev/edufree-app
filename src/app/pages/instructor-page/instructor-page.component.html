@@ -1,110 +1,86 @@
-<main class="profile-page">
+<main  class="profile-page">
   <section class="relative block" style="height: 500px">
-    <div
-      class="absolute top-0 w-full h-full bg-center bg-cover"
-      style="
+    <div class="absolute top-0 w-full h-full bg-center bg-cover" style="
         background-image: url('https://images.unsplash.com/photo-1499336315816-097655dcfbda?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2710&amp;q=80');
-      "
-    >
-      <span
-        id="blackOverlay"
-        class="w-full h-full absolute opacity-50 bg-black"
-      ></span>
+      ">
+      <span id="blackOverlay" class="w-full h-full absolute opacity-50 bg-black"></span>
     </div>
-    <div
-      class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
-      style="height: 70px"
-    >
-      <svg
-        class="absolute bottom-0 overflow-hidden"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="none"
-        version="1.1"
-        viewBox="0 0 2560 100"
-        x="0"
-        y="0"
-      >
-        <polygon
-          class="text-gray-300 fill-current"
-          points="2560 0 2560 100 0 100"
-        ></polygon>
+    <div class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
+      style="height: 70px">
+      <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+        version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+        <polygon class="text-gray-300 fill-current" points="2560 0 2560 100 0 100"></polygon>
       </svg>
     </div>
   </section>
   <section class="relative py-16 bg-gray-300">
     <div class="container mx-auto px-4">
-      <div
-        class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64"
-      >
+      <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64">
         <div *ngIf="document$ | async as user" class="px-6">
           <div class="flex flex-wrap justify-center">
             <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
               <div class="relative">
-                <img
-                alt="..."
-                
-                [src]=user.imgUrl
-                
-                class="mt-10"
-                style="max-width: 150px;"
-              />
+                <img alt="..." [src]=user.imgUrl class="mt-10" style="max-width: 150px;" />
               </div>
-             
+
             </div>
-            <div
-              class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center"
-            >
+            <div class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
               <div class="py-6 px-3 mt-32 sm:mt-0">
                 <button
                   class="pi pi-user-edit bg-blue-500 active:bg-blue-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
-                  type="button"
-                  style="transition: all 0.15s ease 0s"
-                  routerLink="/instructor-page/edit"
-                >
-                  
+                  type="button" style="transition: all 0.15s ease 0s" routerLink="/instructor-page/edit">
+
                 </button>
-                
+                <button
+                class="pi pi-calendar bg-blue-500 active:bg-blue-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
+                type="button" style="transition: all 0.15s ease 0s" routerLink="/calendar">
+
+              </button>
               </div>
             </div>
             <div class="w-full lg:w-4/12 px-4 lg:order-1"></div>
           </div>
           <div *ngIf="document$ | async as user" class="text-center mt-12">
-            <div
-              class="text-3xl font-semibold leading-normal mb-2 text-gray-800"
-            >
-              {{ user.name }} {{ user.lastName }} 
-          </div>
-            <div
-              class="text-sm leading-normal mt-0 mb-2 text-gray-500 font-bold uppercase"
-            >
-              
+            <div class="text-3xl font-semibold leading-normal mb-2 text-gray-800">
+              {{ user.name }} {{ user.lastName }}
+            </div>
+            <div class="text-sm leading-normal mt-0 mb-2 text-gray-500 font-bold uppercase">
+
               {{ user.description }}
             </div>
-            <div
-              class="text-sm leading-normal mt-0 mb-2 text-gray-500 font-bold uppercase"
-            >
-              
+            <div class="text-sm leading-normal mt-0 mb-2 text-gray-500 font-bold uppercase">
+
               {{ user.university }}
             </div>
 
             <div class="mb-2 text-gray-700 mt-10">
-              
+
               {{ user.phoneNumber }}
             </div>
             <div class="mb-2 text-gray-700">
-           {{ user.email }}
-              
+              {{ user.email }}
+
             </div>
 
             <div class="mt-10 py-10 border-t border-gray-300 text-center">
               <div class="flex flex-wrap justify-center">
                 <div class="w-full lg:w-9/12 px-4">
                   <p class="mb-4 text-lg leading-relaxed text-gray-800">
-                    An artist of considerable range, Jenna the name taken by
-                    Melbourne-raised, Brooklyn-based Nick Murphy writes,
-                    performs and records all of his own music, giving it a warm,
-                    intimate feel with a solid groove structure. An artist of
-                    considerable range.
+                    Hello, my name is {{user.name}} {{user.lastName}}, and I am a {{user.description}}. I have
+                    graduated from {{user.university}} with a degree in {{user.department}}. I am proud to
+                    be a part of the {{user.department}} department, where I contribute my skills in software
+                    development and
+                    programming to solve complex problems and contribute to the development of cutting-edge
+                    technologies. In addition
+                    to my work as a {{user.description}}, I have also taught Mathematics courses, showcasing my
+                    versatility and
+                    ability to communicate complex ideas to others. I am always eager to collaborate with others in the
+                    field of
+                    software development and am dedicated to delivering innovative solutions to challenging problems.
+                    In my free time, I enjoy exploring new technologies, coding
+                    personal projects, and keeping up-to-date with the latest developments in the field. If you would
+                    like to contact
+                    me, please feel free to reach out via chatbox.
                   </p>
                 </div>
               </div>
@@ -121,188 +97,185 @@
                         {{ course.name }}
                       </li>
                     </ul>
-                </div>  
-                <button (click)="isClicked = !isClicked"
-                  class="  active:bg-blue-600 uppercase text-white font-semibold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 mt-2"
-                  type="button"
-                  style="transition: all 0.15s ease 0s ; background-color:#5f6982"
-               
-                >
-                  Click To Add Lecture Notes
-                </button>
+                  </div>
+                  <button (click)="isClicked = !isClicked"
+                    class=" mt-9 active:bg-blue-600 uppercase text-white font-semibold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 mt-2"
+                    type="button" style="transition: all 0.15s ease 0s ; background-color:#5f6982">
+                    Click To Add Lecture Notes
+                  </button>
                 </div>
               </div>
             </div>
           </div>
 
-          <div *ngIf="isClicked">
-          
-    <script>
-      // File Upload
-    // 
-    function ekUpload(){
-      function Init() {
-    
-        console.log("Upload Initialised");
-    
-        var fileSelect    = document.getElementById('file-upload'),
-            fileDrag      = document.getElementById('file-drag'),
-            submitButton  = document.getElementById('submit-button');
-    
-        fileSelect.addEventListener('change', fileSelectHandler, false);
-    
-        // Is XHR2 available?
-        var xhr = new XMLHttpRequest();
-        if (xhr.upload) {
-          // File Drop
-          fileDrag.addEventListener('dragover', fileDragHover, false);
-          fileDrag.addEventListener('dragleave', fileDragHover, false);
-          fileDrag.addEventListener('drop', fileSelectHandler, false);
-        }
-      }
-    
-      function fileDragHover(e) {
-        var fileDrag = document.getElementById('file-drag');
-    
-        e.stopPropagation();
-        e.preventDefault();
-    
-        fileDrag.className = (e.type === 'dragover' ? 'hover' : 'modal-body file-upload');
-      }
-    
-      function fileSelectHandler(e) {
-        // Fetch FileList object
-        var files = e.target.files || e.dataTransfer.files;
-    
-        // Cancel event and hover styling
-        fileDragHover(e);
-    
-        // Process all File objects
-        for (var i = 0, f; f = files[i]; i++) {
-          parseFile(f);
-          uploadFile(f);
-        }
-      }
-    
-      // Output
-      function output(msg) {
-        // Response
-        var m = document.getElementById('messages');
-        m.innerHTML = msg;
-      }
-    
-      function parseFile(file) {
-    
-        console.log(file.name);
-        output(
-          '<strong>' + encodeURI(file.name) + '</strong>'
-        );
-        
-        // var fileType = file.type;
-        // console.log(fileType);
-        var imageName = file.name;
-    
-        var isGood = (/\.(?=gif|jpg|png|jpeg)/gi).test(imageName);
-        if (isGood) {
-          document.getElementById('start').classList.add("hidden");
-          document.getElementById('response').classList.remove("hidden");
-          document.getElementById('notimage').classList.add("hidden");
-          // Thumbnail Preview
-          document.getElementById('file-image').classList.remove("hidden");
-          document.getElementById('file-image').src = URL.createObjectURL(file);
-        }
-        else {
-          document.getElementById('file-image').classList.add("hidden");
-          document.getElementById('notimage').classList.remove("hidden");
-          document.getElementById('start').classList.remove("hidden");
-          document.getElementById('response').classList.add("hidden");
-          document.getElementById("file-upload-form").reset();
-        }
-      }
-    
-      function setProgressMaxValue(e) {
-        var pBar = document.getElementById('file-progress');
-    
-        if (e.lengthComputable) {
-          pBar.max = e.total;
-        }
-      }
-    
-      function updateFileProgress(e) {
-        var pBar = document.getElementById('file-progress');
-    
-        if (e.lengthComputable) {
-          pBar.value = e.loaded;
-        }
-      }
-    
-      function uploadFile(file) {
-    
-        var xhr = new XMLHttpRequest(),
-          fileInput = document.getElementById('class-roster-file'),
-          pBar = document.getElementById('file-progress'),
-          fileSizeLimit = 1024; // In MB
-        if (xhr.upload) {
-          // Check if file is less than x MB
-          if (file.size <= fileSizeLimit * 1024 * 1024) {
-            // Progress bar
-            pBar.style.display = 'inline';
-            xhr.upload.addEventListener('loadstart', setProgressMaxValue, false);
-            xhr.upload.addEventListener('progress', updateFileProgress, false);
-    
-            // File received / failed
-            xhr.onreadystatechange = function(e) {
-              if (xhr.readyState == 4) {
-                // Everything is good!
-    
-                // progress.className = (xhr.status == 200 ? "success" : "failure");
-                // document.location.reload(true);
+          <div *ngIf="isClicked" >
+
+            <script>
+              // File Upload
+              // 
+              function ekUpload() {
+                function Init() {
+
+                  console.log("Upload Initialised");
+
+                  var fileSelect = document.getElementById('file-upload'),
+                    fileDrag = document.getElementById('file-drag'),
+                    submitButton = document.getElementById('submit-button');
+
+                  fileSelect.addEventListener('change', fileSelectHandler, false);
+
+                  // Is XHR2 available?
+                  var xhr = new XMLHttpRequest();
+                  if (xhr.upload) {
+                    // File Drop
+                    fileDrag.addEventListener('dragover', fileDragHover, false);
+                    fileDrag.addEventListener('dragleave', fileDragHover, false);
+                    fileDrag.addEventListener('drop', fileSelectHandler, false);
+                  }
+                }
+
+                function fileDragHover(e) {
+                  var fileDrag = document.getElementById('file-drag');
+
+                  e.stopPropagation();
+                  e.preventDefault();
+
+                  fileDrag.className = (e.type === 'dragover' ? 'hover' : 'modal-body file-upload');
+                }
+
+                function fileSelectHandler(e) {
+                  // Fetch FileList object
+                  var files = e.target.files || e.dataTransfer.files;
+
+                  // Cancel event and hover styling
+                  fileDragHover(e);
+
+                  // Process all File objects
+                  for (var i = 0, f; f = files[i]; i++) {
+                    parseFile(f);
+                    uploadFile(f);
+                  }
+                }
+
+                // Output
+                function output(msg) {
+                  // Response
+                  var m = document.getElementById('messages');
+                  m.innerHTML = msg;
+                }
+
+                function parseFile(file) {
+
+                  console.log(file.name);
+                  output(
+                    '<strong>' + encodeURI(file.name) + '</strong>'
+                  );
+
+                  // var fileType = file.type;
+                  // console.log(fileType);
+                  var imageName = file.name;
+
+                  var isGood = (/\.(?=gif|jpg|png|jpeg)/gi).test(imageName);
+                  if (isGood) {
+                    document.getElementById('start').classList.add("hidden");
+                    document.getElementById('response').classList.remove("hidden");
+                    document.getElementById('notimage').classList.add("hidden");
+                    // Thumbnail Preview
+                    document.getElementById('file-image').classList.remove("hidden");
+                    document.getElementById('file-image').src = URL.createObjectURL(file);
+                  }
+                  else {
+                    document.getElementById('file-image').classList.add("hidden");
+                    document.getElementById('notimage').classList.remove("hidden");
+                    document.getElementById('start').classList.remove("hidden");
+                    document.getElementById('response').classList.add("hidden");
+                    document.getElementById("file-upload-form").reset();
+                  }
+                }
+
+                function setProgressMaxValue(e) {
+                  var pBar = document.getElementById('file-progress');
+
+                  if (e.lengthComputable) {
+                    pBar.max = e.total;
+                  }
+                }
+
+                function updateFileProgress(e) {
+                  var pBar = document.getElementById('file-progress');
+
+                  if (e.lengthComputable) {
+                    pBar.value = e.loaded;
+                  }
+                }
+
+                function uploadFile(file) {
+
+                  var xhr = new XMLHttpRequest(),
+                    fileInput = document.getElementById('class-roster-file'),
+                    pBar = document.getElementById('file-progress'),
+                    fileSizeLimit = 1024; // In MB
+                  if (xhr.upload) {
+                    // Check if file is less than x MB
+                    if (file.size <= fileSizeLimit * 1024 * 1024) {
+                      // Progress bar
+                      pBar.style.display = 'inline';
+                      xhr.upload.addEventListener('loadstart', setProgressMaxValue, false);
+                      xhr.upload.addEventListener('progress', updateFileProgress, false);
+
+                      // File received / failed
+                      xhr.onreadystatechange = function (e) {
+                        if (xhr.readyState == 4) {
+                          // Everything is good!
+
+                          // progress.className = (xhr.status == 200 ? "success" : "failure");
+                          // document.location.reload(true);
+                        }
+                      };
+
+                      // Start upload
+                      xhr.open('POST', document.getElementById('file-upload-form').action, true);
+                      xhr.setRequestHeader('X-File-Name', file.name);
+                      xhr.setRequestHeader('X-File-Size', file.size);
+                      xhr.setRequestHeader('Content-Type', 'multipart/form-data');
+                      xhr.send(file);
+                    } else {
+                      output('Please upload a smaller file (< ' + fileSizeLimit + ' MB).');
+                    }
+                  }
+                }
+
+                // Check for the various File API support.
+                if (window.File && window.FileList && window.FileReader) {
+                  Init();
+                } else {
+                  document.getElementById('file-drag').style.display = 'none';
+                }
               }
-            };
-    
-            // Start upload
-            xhr.open('POST', document.getElementById('file-upload-form').action, true);
-            xhr.setRequestHeader('X-File-Name', file.name);
-            xhr.setRequestHeader('X-File-Size', file.size);
-            xhr.setRequestHeader('Content-Type', 'multipart/form-data');
-            xhr.send(file);
-          } else {
-            output('Please upload a smaller file (< ' + fileSizeLimit + ' MB).');
-          }
-        }
-      }
-    
-      // Check for the various File API support.
-      if (window.File && window.FileList && window.FileReader) {
-        Init();
-      } else {
-        document.getElementById('file-drag').style.display = 'none';
-      }
-    }
-    ekUpload();
-    </script>
-    
-    <!-- Upload  -->
-    <form id="file-upload-form" class="uploader">
-      <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
-    
-      <label for="file-upload" id="file-drag">
-        <img id="file-image" src="#" alt="Preview" class="hidden">
-        <div id="start">
-          <i class="fa fa-download" aria-hidden="true"></i>
-          <div>Select a file or drag here</div>
-          <div id="notimage" class="hidden">Please select an image</div>
-          <span id="file-upload-btn" class="btn btn-primary">Select a file</span>
-        </div>
-        <div id="response" class="hidden">
-          <div id="messages"></div>
-          <progress class="progress" id="file-progress" value="0">
-            <span>0</span>%
-          </progress>
-        </div>
-      </label>
-    </form>
-  </div>
+              ekUpload();
+            </script>
+
+            <!-- Upload  -->
+            <form  id="file-upload-form" class="uploader">
+              <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+
+              <label for="file-upload" id="file-drag">
+                <img id="file-image" src="#" alt="Preview" class="hidden">
+                <div id="start">
+                  <i class="fa fa-download" aria-hidden="true"></i>
+                  <div>Select a file or drag here</div>
+                  <div id="notimage" class="hidden">Please select an image</div>
+                  <span id="file-upload-btn" class="btn btn-primary">Select a file</span>
+                </div>
+                <div id="response" class="hidden">
+                  <div id="messages"></div>
+                  <progress class="progress" id="file-progress" value="0">
+                    <span>0</span>%
+                  </progress>
+                </div>
+              </label>
+            </form>
+          </div>
 
         </div>
       </div>
@@ -310,4 +283,3 @@
     </div>
   </section>
 </main>
-
