@@ -1,162 +1,237 @@
 <main class="profile-page">
-    <section class="relative block" style="height: 500px">
-      <div
-        class="absolute top-0 w-full h-full bg-center bg-cover"
-        style="
+  <section class="relative block" style="height: 500px">
+    <div class="absolute top-0 w-full h-full bg-center bg-cover" style="
           background-image: url('https://images.unsplash.com/photo-1499336315816-097655dcfbda?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2710&amp;q=80');
-        "
-      >
-        <span
-          id="blackOverlay"
-          class="w-full h-full absolute opacity-50 bg-black"
-        ></span>
-      </div>
-      <div
-        class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
-        style="height: 70px"
-      >
-        <svg
-          class="absolute bottom-0 overflow-hidden"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-          version="1.1"
-          viewBox="0 0 2560 100"
-          x="0"
-          y="0"
-        >
-          <polygon
-            class="text-gray-300 fill-current"
-            points="2560 0 2560 100 0 100"
-          ></polygon>
-        </svg>
-      </div>
-    </section>
-    <section class=" relative py-16 bg-gray-300">
-      <div class="container mx-auto px-4">
-        <div
-          class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64"
-        >
-          <div class="px-6">
-            <div class="flex flex-wrap justify-center">
-              <div class="mt-20 w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
-                <div class="relative"></div>
-                <img
-                
-                  src="https://pngset.com/images/marina-circle-girl-picture-in-circle-face-person-smile-dimples-transparent-png-853416.png"
-style="max-width: 150px;" class="rounded-full">
-              </div>
-              <div
-                class=" w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center"
-              >
-                <div class="py-6 px-3 mt-32 sm:mt-0">
-                  <button
-                    class="w-16 h-9 pi pi-comments bg-blue-500 active:bg-blue-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
-                    type="button"
-                    style="transition: all 0.15s ease 0s"
-                    routerLink="/chat"
-                  >
-                    
-                  </button>
-                
-              
-                  <button
-                    class="w-16 h-9  pi pi-calendar bg-blue-500 active:bg-blue-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
-                    type="button"
-                    style="transition: all 0.15s ease 0s"
-                    routerLink="/calendar"
-                  >
-                    
-                  </button>
-                </div>
-              </div>
-              <div class="w-full lg:w-4/12 px-4 lg:order-1"></div>
+        ">
+      <span id="blackOverlay" class="w-full h-full absolute opacity-50 bg-black"></span>
+    </div>
+    <div class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
+      style="height: 70px">
+      <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+        version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+        <polygon class="text-gray-300 fill-current" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
+    </div>
+  </section>
+  <section class=" relative py-16 bg-gray-300">
+    <div class="container mx-auto px-4">
+      <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64">
+        <div class="px-6">
+          <div class="flex flex-wrap justify-center">
+            <div class="mt-20 w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
+              <div class="relative"></div>
+              <img
+                src="https://pngset.com/images/marina-circle-girl-picture-in-circle-face-person-smile-dimples-transparent-png-853416.png"
+                style="max-width: 150px;" class="rounded-full">
             </div>
-            <div *ngIf="document$ | async as user" class="text-center mt-12">
-              <h3
-                class="text-4xl font-semibold leading-normal mb-2 text-gray-800"
-              >
-                Ada Çakıroğlu 
-              </h3>
-              <div
-                class="text-sm leading-normal mt-0 mb-2 text-gray-500 font-bold uppercase"
-              >
-                <i class="fas fa-map-marker-alt mr-2 text-lg text-gray-500"></i>
-                Senior Software Developer
+            <div class=" w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
+              <div class="py-6 px-3 mt-32 sm:mt-0">
+                <button
+                  class="w-16 h-9 pi pi-comments bg-blue-500 active:bg-blue-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
+                  type="button" style="transition: all 0.15s ease 0s" routerLink="/chat">
+
+                </button>
+
+
+                <button
+                  class="w-16 h-9  pi pi-calendar bg-blue-500 active:bg-blue-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
+                  type="button" style="transition: all 0.15s ease 0s" routerLink="/calendar">
+
+                </button>
               </div>
-              <div
-                class="text-sm leading-normal mt-0 mb-2 text-gray-500 font-bold uppercase"
-              >
-                Ankara Yıldırım Beyazıt University
-              </div>
-  
-              <div class="mb-2 text-gray-700 mt-10">
-                Computer Engineering
-              </div>
-              <div class="mb-2 text-gray-700">
-                adacakiroglu@gmail.com
-              </div>
-  
-              <div class="mt-10 py-10 border-t border-gray-300 text-center">
-                <div class="flex flex-wrap justify-center">
-                  <div class="w-full lg:w-9/12 px-4">
-                    <p class="mb-4 text-lg leading-relaxed text-gray-800">
-                        Hello, my name is Ada Çakıroğlu, and I am a Senior Software Developer. I have
-                         graduated from Ankara Yıldırım Beyazıt University with a degree in Computer Engineering. I am proud to
-                         be a part of the Computer Engineering department, where I contribute my skills in software development and
-                          programming to solve complex problems and contribute to the development of cutting-edge technologies. In addition 
-                          to my work as a Senior Software Developer, I have also taught Mathematics courses, showcasing my versatility and 
-                          ability to communicate complex ideas to others. I am always eager to collaborate with others in the field of 
-                          software development and am dedicated to delivering innovative solutions to challenging problems.
-                           In my free time, I enjoy exploring new technologies, coding 
-                          personal projects, and keeping up-to-date with the latest developments in the field. If you would like to contact
-                           me, please feel free to reach out via chatbox.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="mt-10 py-10 border-t border-gray-300 text-center">
-                <div class="flex flex-wrap justify-center">
-                  <div class="w-full lg:w-9/12 px-4">
-                    <p class="mb-4 text-lg leading-relaxed text-gray-800">
-                      Courses that are taught by this instructor are as follows:
-                    </p>
-                    <div>
-                      <ul>
-                        <li *ngFor="let course of user.courses">
-                          {{ course.name }}
-                        </li>
-                      </ul>
-                  </div> 
-                   
-                  </div>
+            </div>
+            <div class="w-full lg:w-4/12 px-4 lg:order-1"></div>
+          </div>
+          <div *ngIf="document$ | async as user" class="text-center mt-12">
+            <h3 class="text-4xl font-semibold leading-normal mb-2 text-gray-800">
+              Ada Çakıroğlu
+            </h3>
+            <div class="text-sm leading-normal mt-0 mb-2 text-gray-500 font-bold uppercase">
+              <i class="fas fa-map-marker-alt mr-2 text-lg text-gray-500"></i>
+              Senior Software Developer
+            </div>
+            <div class="text-sm leading-normal mt-0 mb-2 text-gray-500 font-bold uppercase">
+              Ankara Yıldırım Beyazıt University
+            </div>
+
+            <div class="mb-2 text-gray-700 mt-10">
+              Computer Engineering
+            </div>
+            <div class="mb-2 text-gray-700">
+              adacakiroglu@gmail.com
+            </div>
+
+            <div class="mt-10 py-10 border-t border-gray-300 text-center">
+              <div class="flex flex-wrap justify-center">
+                <div class="w-full lg:w-9/12 px-4">
+                  <p class="mb-4 text-lg leading-relaxed text-gray-800">
+                    Hello, my name is Ada Çakıroğlu, and I am a Senior Software Developer. I have
+                    graduated from Ankara Yıldırım Beyazıt University with a degree in Computer Engineering. I am proud
+                    to
+                    be a part of the Computer Engineering department, where I contribute my skills in software
+                    development and
+                    programming to solve complex problems and contribute to the development of cutting-edge
+                    technologies. In addition
+                    to my work as a Senior Software Developer, I have also taught Mathematics courses, showcasing my
+                    versatility and
+                    ability to communicate complex ideas to others. I am always eager to collaborate with others in the
+                    field of
+                    software development and am dedicated to delivering innovative solutions to challenging problems.
+                    In my free time, I enjoy exploring new technologies, coding
+                    personal projects, and keeping up-to-date with the latest developments in the field. If you would
+                    like to contact
+                    me, please feel free to reach out via chatbox.
+                  </p>
                 </div>
               </div>
             </div>
+            <div class="mt-10 py-10 border-t border-gray-300 text-center">
+              <div class="flex flex-wrap justify-center">
+                <div class="w-full lg:w-9/12 px-4">
+                  <p class="mb-4 text-lg leading-relaxed text-gray-800">
+                    Courses that are taught by this instructor are as follows:
+                  </p>
+                  <div>
+                    <ul>
+                      <li *ngFor="let course of user.courses">
+                        {{ course.name }}
+                      </li>
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <button (click)="isClicked = !isClicked"
+              class=" mb-9 bg-blue-500 active:bg-blue-600 uppercase text-white font-semibold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 mt-2"
+              type="button" style="transition: all 0.15s ease 0s ;">
+              Lecture Notes
+            </button>
+
           </div>
 
-        </div>    
-              <!--BURADAN-->
-
-          <mat-list>
-            <div mat-subheader>Folders</div>
-            <mat-list-item *ngFor="let folder of folders">
-              <mat-icon matListItemIcon>folder</mat-icon>
-              <div matListItemTitle>{{folder.name}}</div>
-              <div matListItemLine>{{folder.updated | date}}</div>
-            </mat-list-item>
-            <mat-divider></mat-divider>
-            <div mat-subheader>Notes</div>
-            <mat-list-item *ngFor="let note of notes">
-              <mat-icon matListItemIcon>note</mat-icon>
-              <div matListItemTitle>{{note.name}}</div>
-              <div matListItemLine>{{note.updated | date}}</div>
-            </mat-list-item>
-          </mat-list>
-
-
-          <!--BURAYA-->
+        </div>
+        <div *ngIf="isClicked">
+      
+          <!-- component -->
+          <div class="">
+            <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
+            <div class="mx-auto  w-full md:w-1/2 lg:w-1/4 px-3 pb-3" x-data="{ open: false, color: false }">
+              <div
+                class="flex items-center bg-gray-500 rounded-md p-3 text-white cursor-pointer transition duration-500 ease-in-out hover:shadow hover:bg-gray-600">
+                <div>
+                  <svg fill="currentColor" class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path d="M0 4c0-1.1.9-2 2-2h7l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4z"></path>
+                  </svg>
+  
+                </div>
+                <div class="px-3 mr-auto">
+                  <h4 class="font-bold">High School Math Notes</h4>
+                  <small class="text-xs">Math notes with examples</small>
+                </div>
+  
+                <div class="relative">
+                  <a (click)="openModal=!openModal">
+                    <svg fill="currentColor" class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                      <path
+                        d="M10 12a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0-6a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 12a2 2 0 1 1 0-4 2 2 0 0 1 0 4z">
+                      </path>
+                    </svg>
+  
+                  </a>
+  
+  
+  
+                  <div *ngIf="openModal" x-show="open" x-transition:enter="transition ease-out duration-100"
+                    x-transition:enter-start="transform opacity-0 scale-95"
+                    x-transition:enter-end="transform opacity-100 scale-100"
+                    x-transition:leave="transition ease-in duration-75"
+                    x-transition:leave-start="transform opacity-100 scale-100"
+                    x-transition:leave-end="transform opacity-0 scale-95"
+                    class="options absolute bg-white text-gray-600 origin-top-right right-0 mt-2 w-56 rounded-md shadow-lg overflow-hidden">
+                    <a href="javascript:;" class="flex py-3 px-2 text-sm font-bold hover:bg-gray-100 ">
+                      <span class="mr-auto">View</span>
+                      <svg viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                        <path
+                          d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z">
+                        </path>
+                      </svg>
+  
+                    </a>
+                    <a href="javascript:;" class="flex py-3 px-2 text-sm font-bold hover:bg-gray-100">
+                      <span class="mr-auto">Download</span>
+                      <svg viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                        <path fill-rule="evenodd"
+                          d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+  
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mx-auto  w-full md:w-1/2 lg:w-1/4 px-3 pb-3" x-data="{ open: false, color: false }">
+              <div
+                class="flex items-center bg-gray-500 rounded-md p-3 text-white cursor-pointer transition duration-500 ease-in-out hover:shadow hover:bg-gray-600">
+                <div>
+                  <svg fill="currentColor" class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path d="M0 4c0-1.1.9-2 2-2h7l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4z"></path>
+                  </svg>
+  
+                </div>
+                <div class="px-3 mr-auto">
+                  <h4 class="font-bold">Python Notes</h4>
+                  <small class="text-xs">With code examples</small>
+                </div>
+  
+                <div class="relative">
+                  <a (click)="openModal2=!openModal2">
+                    <svg fill="currentColor" class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                      <path
+                        d="M10 12a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0-6a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 12a2 2 0 1 1 0-4 2 2 0 0 1 0 4z">
+                      </path>
+                    </svg>
+  
+                  </a>
+  
+  
+  
+                  <div *ngIf="openModal2" x-show="open" x-transition:enter="transition ease-out duration-100"
+                    x-transition:enter-start="transform opacity-0 scale-95"
+                    x-transition:enter-end="transform opacity-100 scale-100"
+                    x-transition:leave="transition ease-in duration-75"
+                    x-transition:leave-start="transform opacity-100 scale-100"
+                    x-transition:leave-end="transform opacity-0 scale-95"
+                    class="options absolute bg-white text-gray-600 origin-top-right right-0 mt-2 w-56 rounded-md shadow-lg overflow-hidden">
+                    <a href="javascript:;" class="flex py-3 px-2 text-sm font-bold hover:bg-gray-100 ">
+                      <span class="mr-auto">View</span>
+                      <svg viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                        <path
+                          d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z">
+                        </path>
+                      </svg>
+  
+                    </a>
+                    <a href="javascript:;" class="flex py-3 px-2 text-sm font-bold hover:bg-gray-100">
+                      <span class="mr-auto">Download</span>
+                      <svg viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5" >
+                        <path fill-rule="evenodd"
+                          d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+  
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+        </div>
       </div>
-    </section>
-  </main>
-  
-  
+      
+    </div>
+  </section>
+</main>
