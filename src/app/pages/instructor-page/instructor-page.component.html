@@ -20,7 +20,7 @@
           <div class="flex flex-wrap justify-center">
             <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
               <div class="relative">
-                <img alt="..." [src]=user.imgUrl class="mt-10" style="max-width: 150px;" />
+                <img alt="..." [src]=user.imgUrl class="mt-10 rounded-full" style="max-width: 150px;" />
               </div>
 
             </div>
@@ -68,17 +68,13 @@
                   <p class="mb-4 text-lg leading-relaxed text-gray-800">
                     Hello, my name is {{user.name}} {{user.lastName}}, and I am a {{user.description}}. I have
                     graduated from {{user.university}} with a degree in {{user.department}}. I am proud to
-                    be a part of the {{user.department}} department, where I contribute my skills in software
-                    development and
-                    programming to solve complex problems and contribute to the development of cutting-edge
-                    technologies. In addition
-                    to my work as a {{user.description}}, I have also taught Mathematics courses, showcasing my
+                    be a part of the {{user.department}} department In addition
+                    to my work as a {{user.description}}, I have also taught related courses shown below, showcasing my
                     versatility and
                     ability to communicate complex ideas to others. I am always eager to collaborate with others in the
                     field of
-                    software development and am dedicated to delivering innovative solutions to challenging problems.
-                    In my free time, I enjoy exploring new technologies, coding
-                    personal projects, and keeping up-to-date with the latest developments in the field. If you would
+                    {{user.department}} and am dedicated to delivering innovative solutions to challenging problems.
+                    In my free time, I enjoy exploring new technologies, personal projects, and keeping up-to-date with the latest developments in the field. If you would
                     like to contact
                     me, please feel free to reach out via chatbox.
                   </p>

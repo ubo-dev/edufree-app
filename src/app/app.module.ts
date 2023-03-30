@@ -28,6 +28,9 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { CalendarComponent } from './pages/calendar/calendar.component';
 import { ChatComponent } from './pages/chat/chat.component';
 import { ViewProfileComponent } from './view-profile/view-profile.component';
+import {MatListModule} from '@angular/material/list';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,10 +63,15 @@ import { ViewProfileComponent } from './view-profile/view-profile.component';
     MultiSelectModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatListModule,
+    MatDividerModule,
+    MatIconModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory,
     }),
+    
+    
   ],
   exports: [CalendarModule],
 })

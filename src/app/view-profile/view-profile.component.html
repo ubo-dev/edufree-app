@@ -42,11 +42,11 @@
                 <div class="relative"></div>
                 <img
                 
-                  src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg"
-style="max-width: 150px;">
+                  src="https://pngset.com/images/marina-circle-girl-picture-in-circle-face-person-smile-dimples-transparent-png-853416.png"
+style="max-width: 150px;" class="rounded-full">
               </div>
               <div
-                class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center"
+                class=" w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center"
               >
                 <div class="py-6 px-3 mt-32 sm:mt-0">
                   <button
@@ -133,7 +133,28 @@ style="max-width: 150px;">
               </div>
             </div>
           </div>
-        </div>
+
+        </div>    
+              <!--BURADAN-->
+
+          <mat-list>
+            <div mat-subheader>Folders</div>
+            <mat-list-item *ngFor="let folder of folders">
+              <mat-icon matListItemIcon>folder</mat-icon>
+              <div matListItemTitle>{{folder.name}}</div>
+              <div matListItemLine>{{folder.updated | date}}</div>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <div mat-subheader>Notes</div>
+            <mat-list-item *ngFor="let note of notes">
+              <mat-icon matListItemIcon>note</mat-icon>
+              <div matListItemTitle>{{note.name}}</div>
+              <div matListItemLine>{{note.updated | date}}</div>
+            </mat-list-item>
+          </mat-list>
+
+
+          <!--BURAYA-->
       </div>
     </section>
   </main>
