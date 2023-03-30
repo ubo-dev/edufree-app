@@ -64,116 +64,121 @@
       (eventTimesChanged)="eventTimesChanged($event)"
     >
     </mwl-calendar-day-view>
+    
+    <div class="table-responsive py-5 grid place-items-center">
+      <button
+      (click)="addEvent()"
+      type="button"
+      class="bg-white text-gray-700 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-gray-600 transition-all text-sm dark:bg-gray-800 dark:hover:bg-slate-800 dark:border-gray-700 dark:text-gray-400 font-bold py-2 px-4 rounded mr-2 mb-5"
+    >
+      Add Event
+    </button>
+      <table class="">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Primary color</th>
+            <th>Secondary + text color</th>
+            <th>Starts at</th>
+            <th>Ends at</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+  
+        <tbody class="">
+          <tr *ngFor="let event of events">
+            <td>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="event.title"
+                (keyup)="refresh.next()"
+              />
+            </td>
+            <td>
+              <input
+                type="color"
+                [(ngModel)]="event.color!.primary"
+                (change)="refresh.next()"
+              />
+            </td>
+            <td>
+              <input
+                type="color"
+                [(ngModel)]="event.color!.secondary"
+                (change)="refresh.next()"
+              />
+              <input
+                type="color"
+                [ngModel]="event.color!.secondaryText ?? '#1e90ff'"
+                (ngModelChange)="event.color!.secondaryText = $event"
+                (change)="refresh.next()"
+              />
+            </td>
+            <td>
+              <input
+                class="form-control"
+                type="text"
+                mwlFlatpickr
+                [(ngModel)]="event.start"
+                (ngModelChange)="refresh.next()"
+                dateFormat="Y-m-dTH:i"
+                altFormat="F j, Y H:i"
+                placeholder="Not set"
+              />
+            </td>
+            <td>
+              <input
+                class="form-control"
+                type="text"
+                mwlFlatpickr
+                [(ngModel)]="event.end"
+                (ngModelChange)="refresh.next()"
+                dateFormat="Y-m-dTH:i"
+                altFormat="F j, Y H:i"
+                placeholder="Not set"
+              />
+            </td>
+            <td>
+              <button class="" (click)="deleteEvent(event)">
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br /><br /><br />
+  
+    <ng-template #modalContent let-close="close">
+      <div class="modal-header">
+        <h5 class="modal-title">Event action occurred</h5>
+        <button type="button" class="close" (click)="close()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+          Action:
+          <pre>{{ modalData!.action }}</pre>
+        </div>
+        <div>
+          Event:
+          <pre>{{ modalData!.event }}</pre>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" (click)="close()">
+          OK
+        </button>
+      </div>
+    </ng-template>
+  </div>
+  
   </div>
 
-  <br /><br /><br />
 
-  <button
-    (click)="addEvent()"
-    type="button"
-    class="grid place-content-start ml-10 text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-  >
-    Add Event
-  </button>
 
-  <div class="table-responsive">
-    <table class="table table-bordered text-gray-200">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Primary color</th>
-          <th>Secondary + text color</th>
-          <th>Starts at</th>
-          <th>Ends at</th>
-          <th>Remove</th>
-        </tr>
-      </thead>
+  
 
-      <tbody class="text-gray-800">
-        <tr *ngFor="let event of events">
-          <td>
-            <input
-              type="text"
-              class="form-control"
-              [(ngModel)]="event.title"
-              (keyup)="refresh.next()"
-            />
-          </td>
-          <td>
-            <input
-              type="color"
-              [(ngModel)]="event.color!.primary"
-              (change)="refresh.next()"
-            />
-          </td>
-          <td>
-            <input
-              type="color"
-              [(ngModel)]="event.color!.secondary"
-              (change)="refresh.next()"
-            />
-            <input
-              type="color"
-              [ngModel]="event.color!.secondaryText ?? '#1e90ff'"
-              (ngModelChange)="event.color!.secondaryText = $event"
-              (change)="refresh.next()"
-            />
-          </td>
-          <td>
-            <input
-              class="form-control"
-              type="text"
-              mwlFlatpickr
-              [(ngModel)]="event.start"
-              (ngModelChange)="refresh.next()"
-              dateFormat="Y-m-dTH:i"
-              altFormat="F j, Y H:i"
-              placeholder="Not set"
-            />
-          </td>
-          <td>
-            <input
-              class="form-control"
-              type="text"
-              mwlFlatpickr
-              [(ngModel)]="event.end"
-              (ngModelChange)="refresh.next()"
-              dateFormat="Y-m-dTH:i"
-              altFormat="F j, Y H:i"
-              placeholder="Not set"
-            />
-          </td>
-          <td>
-            <button class="text-gray-200" (click)="deleteEvent(event)">
-              Delete
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <ng-template #modalContent let-close="close">
-    <div class="modal-header">
-      <h5 class="modal-title">Event action occurred</h5>
-      <button type="button" class="close" (click)="close()">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-      <div>
-        Action:
-        <pre>{{ modalData!.action }}</pre>
-      </div>
-      <div>
-        Event:
-        <pre>{{ modalData!.event }}</pre>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-outline-secondary" (click)="close()">
-        OK
-      </button>
-    </div>
-  </ng-template>
-</div>
+  
