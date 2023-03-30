@@ -93,8 +93,11 @@
                   </p>
                   <div>
                     <ul>
-                      <li *ngFor="let course of user.courses">
-                        {{ course.name }}
+                      <li>
+                        Math
+                      </li>
+                      <li>
+                        Programming
                       </li>
                     </ul>
                   </div>
@@ -104,7 +107,7 @@
             </div>
 
             <button (click)="isClicked = !isClicked"
-              class=" mb-9 bg-blue-500 active:bg-blue-600 uppercase text-white font-semibold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 mt-2"
+              class=" mb-8 bg-blue-500 active:bg-blue-600 uppercase text-white font-semibold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mt-2"
               type="button" style="transition: all 0.15s ease 0s ;">
               Lecture Notes
             </button>
