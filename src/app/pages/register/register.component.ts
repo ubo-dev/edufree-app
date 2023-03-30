@@ -133,6 +133,7 @@ export class RegisterComponent implements OnInit {
       Validators.minLength(3),
     ]),
     courses: new FormControl([], [Validators.required]),
+    imgUrl: new FormControl('https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg', [Validators.required]),
   });
 
   showAlert = false;
