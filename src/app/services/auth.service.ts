@@ -76,6 +76,7 @@ export class AuthService {
       department: instructorData.department,
       description: instructorData.description,
       courses: instructorData.courses,
+      imgUrl: instructorData.imgUrl,
     });
 
     await instructorCred.user.updateProfile({
